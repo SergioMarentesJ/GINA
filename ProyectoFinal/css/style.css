@@ -40,6 +40,7 @@ footer{
 .logo{
 	display: flex;
 	align-items: center;
+	text-decoration: none;
 }
 .logo i{
 	color: var(--main-color);
@@ -61,11 +62,9 @@ footer{
 	padding: 5px 0;
 	margin: 0px 30px;
 	transition: all .50s ease;
+	text-decoration: none;
 }
 .navbar a:hover{
-	color: var(--main-color);
-}
-.navbar a.active{
 	color: var(--main-color);
 }
 .main{
@@ -79,6 +78,7 @@ footer{
 	font-size: 1.1rem;
 	font-weight: 500;
 	transition: all .50s ease;
+	text-decoration: none;
 }
 .user{
 	display: flex;
@@ -139,9 +139,6 @@ footer{
 		color: var(--text-color);
 		transform: translateY(5px);
 	}
-	.navbar a.active{
-		color: var(--text-color);
-	}
 	.navbar.open{
 		right: 2%;
 	}
@@ -163,6 +160,7 @@ footer{
   -moz-box-sizing: border-box;
   padding: 0px 20px 20px 20px;
 }
+
 .footer .col h1 {
   margin: 0;
   padding: 0;
@@ -174,6 +172,10 @@ footer{
   font-weight: normal;
   text-transform: uppercase;
   letter-spacing: 0.250em;
+}
+.footer .contain .col ul li a {
+	text-decoration: none;
+	color: white;
 }
 .footer .col ul {
   list-style-type: none;
@@ -247,5 +249,3 @@ footer{
     width: 100%;
   }
 }
-
-
