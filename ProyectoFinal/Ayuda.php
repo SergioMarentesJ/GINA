@@ -69,24 +69,67 @@
       <section class="container text-light mt-5 rounded text-center">
         <div class="row justify-content-center">
             <div class="col-md-4 my-4">
-                <h1>Encuentranos en</h1>
+                <h1>Preguntas Frecuentes</h1>
             </div>
         </div>
         <div class="row pb-5">
            <div class="col-lg-6 ">
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3701.5085115577617!2d-102.3178233525165!3d21.914994151499513!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8429eee2702925f9%3A0xc9ec8e09a4497bfc!2sUniversidad%20Aut%C3%B3noma%20de%20Aguascalientes%2C%2020130%20Aguascalientes%2C%20Ags.!5e0!3m2!1ses-419!2smx!4v1670388451764!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                  <img src="images/shop.jpg" alt="">
            </div>
             <div class="col-lg-6 text-center text-lg-left pl-5">
-                <h3 class="mb-1 mt-5 mt-lg-0">Dirección</h3>
-                <p class="mb-0">Rivadavia 1562</p>
-                <p class="mb-0">Capital Federal</p>
-                <p>Argentina</p>
-                <h3 class="mb-1">Telefono</h3>
-                <p>+54 11 1234-9874</p>
-                <h3 class="mb-1">Email</h3>
-                <p>contactanos@gmail.com</p>
+                <h3 class="mb-1 mt-5 mt-lg-0">1. ¿Cuáles son los pasos a seguir para comprar en la tienda Online?</h3>
+                <p class="mb-0">
+                Elige el producto que te interesa de las secciones clasificadas de la tienda on-line, y a través de un clic conseguirás una ampliación de su fotografía además de información detallada del mismo. <br><br>
+Añade el artículo a la cesta. A continuación puedes elegir seguir comprando o tramitar pedido. <br><br>
+Selecciona un método de pago: Visa, Visa Electron, Mastercard, American Express... <br><br>
+Confirma el pedido y recibirás un correo electrónico de confirmación. <br>
+                </p>
+            <br><br><br>
+                <h3 class="mb-1 mt-5 mt-lg-0">2. ¿Es seguro comprar en la tienda online?
+
+</h3>
+                <p class="mb-0">
+                Sí. Puedes comprar con total tranquilidad, pues dedicamos un gran esfuerzo en disponer de recursos con los que garantizar la seguridad de tus compras y de tus datos.
+                </p>
+                
+                <br><br><br>
+                <h3 class="mb-1 mt-5 mt-lg-0">3. ¿Se reponen los artículos con la indicación “agotado”?</h3>
+                <p class="mb-0">
+                Si un artículo está agotado, trataremos de reponerlo lo antes posible. Si no hubiese más existencias del mismo, lo retiraremos de la página web.
+                </p>
+             </div>
+        </div>
+    </section> 
+       
+       
+    <section class="container text-light mt-5 rounded text-center">
+        <div class="row justify-content-center">
+            <div class="col-md-4 my-4">
+                <h1> </h1>
             </div>
-            
+        </div>
+        <div class="row pb-5">
+           <div class="col-lg-6 ">
+                  <img src="images/shop.jpg" alt="">
+           </div>
+            <div class="col-lg-6 text-center text-lg-left pl-5">
+                <h3 class="mb-1 mt-5 mt-lg-0">4. ¿Recibiré el mismo producto que veo en la fotografía de la tienda online?</h3>
+                <p class="mb-0">
+                Sí, excepto en aquellos productos manufacturados por medio de procesos artesanales en los que podría haber mínimas diferencias de acabado.</p> <br><br><br>
+                
+                <h3 class="mb-1 mt-5 mt-lg-0">5. ¿Es seguro utilizar mi tarjeta de crédito en la página web?</h3>
+                <p class="mb-0">
+                Sí, sus datos se transmiten de forma totalmente encriptada SSL. Para el pago con Visa y Mastercard sólo se aceptarán transacciones CES (Comercio Electrónico Seguro). Así pues, tras verificar que la tarjeta está adherida al sistema CES, el sistema contactará con el banco que la ha emitido para que autorice la compra. Una vez el banco confirme la autenticidad, se efectuará el cargo en la tarjeta. En caso contrario el pedido será cancelado.
+                </p>
+                
+                <br><br><br>
+                <h3 class="mb-1 mt-5 mt-lg-0">6. ¿Qué debo hacer si recibo un artículo incorrecto o defectuoso?</h3>
+                <p class="mb-0">
+                Si en alguna ocasión, por error, llegases a recibir un artículo no solicitado o con alguna tara o defecto, ponte en contacto con nuestro departamento de atención al cliente.
+
+
+                </p>
+             </div>
         </div>
     </section>
 

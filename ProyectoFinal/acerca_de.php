@@ -13,72 +13,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
+<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Silky</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-
 	<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-
 	<link rel="stylesheet"
   href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous"> 
+  
   
   <style>
-    * {
-  box-sizing: border-box;
-}
-
-/* Create two columns/boxes that floats next to each other */
-nav {
-  float: left;
-  width: 30%;
-  height: 300px; /* only for demonstration, should be removed */
-  background: #898989;
-  padding: 20px;
-}
-
-
-article {
-  float: left;
-  padding: 20px;
-  width: 70%;
-  background-color: #894444;
-  height: 300px; /* only for demonstration, should be removed */
-}
+      .container{
+            background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(https://escuelaemily.imgix.net/https%3A%2F%2Fi.pinimg.com%2Foriginals%2Fd5%2F83%2F54%2Fd5835434e5895b20056c9107c530030e.jpg?s=af3a2234086392e0f89378c4b92a3f82);
+            -webkit-background-size: cover;
+            background-size: cover;
+            background-position: center center;
+        }
       
-section{
-  width: 1300px;
-  margin: 20px auto;
-  padding: 10px 0;
-  box-shadow: 0 3px 5px rgba(0,0,0,0.3);
-}
+      
+        * {
+            box-sizing: border-box;
+        }
 
-/* Clear floats after the columns */
-section::after {
-  content: "";
-  display: table;
-  clear: both;
-}
+        /* Create two columns/boxes that floats next to each other */
+        nav {
+          float: left;
+          width: 30%;
+          height: 300px; /* only for demonstration, should be removed */
+          background: #898989;
+          padding: 20px;
+        }
 
-/* Style the footer */
-footer {
-  background-color: #777;
-  padding: 10px;
-  text-align: center;
-  color: #ffffff;
-}
 
-/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
-@media (max-width: 600px) {
-  nav, article {
-    width: 100%;
-    height: auto;
-  }
-}
+        article {
+          float: left;
+          padding: 20px;
+          width: 70%;
+          background-color: #894444;
+          height: 300px; /* only for demonstration, should be removed */
+        }
+      
+        section{
+          width: 1300px;
+          margin: 20px auto;
+          padding: 10px 0;
+          box-shadow: 0 3px 5px rgba(0,0,0,0.3);
+        }
+
+        /* Clear floats after the columns */
+        section::after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+
+        /* Style the footer */
+        footer {
+          background-color: #777;
+          padding: 10px;
+          text-align: center;
+          color: #ffffff;
+        }
+
+        /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+        @media (max-width: 600px) {
+          nav, article {
+            width: 100%;
+            height: auto;
+          }
+        }
     </style>
   
 </head>
@@ -115,43 +122,57 @@ footer {
       
       
       <br><br><br><br>
-      
-      
-<section>
-  <nav>
-    <img src="../ProyectoFinal/images/mision.jpg" width="350px" height="260px">
-  </nav>
-  
-  <article>
-    <h1>MISION</h1>
-    <p>El brindar a nuestros preciados clientes una coleccion de productos de calidad, los cuales cuenten con una escala de precioso accesibles a todos, los cuales cuentan con sus necesidades y exigencias y asi entrando en sus gustos de estilo de vida.</p>
-    <p>Asi como manteniendonos en el top de mejores tiendas en linea, por nuestra accesibilidad y servicio</p>
-  </article>
-</section>
     
-        
-<section>
-  <nav>
-    <img src="../ProyectoFinal/images/vision.jpg" width="350px" height="260px">
-  </nav>
-  
-  <article>
-    <h1>VISIÓN</h1>
-    <p>Nuestro negocio se caracteriza por ser una tienda en linea emergente, la cual esta pocisionandose el mercado como una de las mejores, lo cual nos ayuda a crecer, asi mejorando nuestro servicio dia dia, nuestros clientes nos ayudan a crecer y mejorar la mercancia y precios.</p>
-    <p>De esta manera nos pocisionamos en el top de las mejores tiendas en linea.</p>
-  </article>
-</section>
+      <section class="container text-light mt-5 rounded text-center">
+        <div class="row justify-content-center">
+            <div class="col-md-4 my-4">
+                <h1>MISION</h1>
+            </div>
+        </div>
+        <div class="row pb-5">
+           <div class="col-lg-6 ">
+                  <img src="../ProyectoFinal/images/mision.jpg" width="350px" height="260px">
+           </div>
+            <div class="col-lg-6 text-center text-lg-left pl-5">
+                <h3 class="mb-1 mt-5 mt-lg-0">El brindar a nuestros preciados clientes una coleccion de productos de calidad, los cuales cuenten con una escala de precioso accesibles a todos, los cuales cuentan con sus necesidades y exigencias y asi entrando en sus gustos de estilo de vida.
+                <br> <br> Asi como manteniendonos en el top de mejores tiendas en linea, por nuestra accesibilidad y servicio</h3>
+            </div>
+            
+        </div>
+    </section> 
+    
+    <section class="container text-light mt-5 rounded text-center">
+        <div class="row justify-content-center">
+            <div class="col-md-4 my-4">
+                <h1>VISIÓN</h1>
+            </div>
+        </div>
+        <div class="row pb-5">
+           <div class="col-lg-6 ">
+                   <img src="../ProyectoFinal/images/vision.jpg" width="350px" height="260px">
+           </div>
+            <div class="col-lg-6 text-center text-lg-left pl-5">
+                <h3 class="mb-1 mt-5 mt-lg-0">Nuestro negocio se caracteriza por ser una tienda en linea emergente, la cual esta pocisionandose el mercado como una de las mejores, lo cual nos ayuda a crecer, asi mejorando nuestro servicio dia dia, nuestros clientes nos ayudan a crecer y mejorar la mercancia y precios. <br><br> De esta manera nos pocisionamos en el top de las mejores tiendas en linea.</h3>
+            </div>
+        </div>
+    </section>
+          
+<section class="container text-light mt-5 rounded text-center">
+        <div class="row justify-content-center">
+            <div class="col-md-4 my-4">
+                <h1>OBJETIVO</h1>
+            </div>
+        </div>
+        <div class="row pb-5">
+           <div class="col-lg-6 ">
+                <img src="../ProyectoFinal/images/objetivo.jpg" width="350px" height="260px">
+           </div>
+            <div class="col-lg-6 text-center text-lg-left pl-5">
+                <h3 class="mb-1 mt-5 mt-lg-0">Nuestro principal objetivo es ofrecer productos de la mejor calidad, que cumpla con los criterios, necesidades y gustos  del los usuarios y clientes, tambien vender ropa y accesorios que cumplan con los mejores estandares del mercado.</h3>
+            </div>
+        </div>
+    </section>      
            
-<section>
-  <nav>
-    <img src="../ProyectoFinal/images/objetivo.jpg" width="350px" height="260px">
-  </nav>
-  
-  <article>
-    <h1>OBJETIVO</h1>
-      <p>Nuestro principal objetivo es ofrecer productos de la mejor calidad, que cumpla con los criterios, necesidades y gustos  del los usuarios y clientes, tambien vender ropa y accesorios que cumplan con los mejores estandares del mercado.</p>
-  </article>
-</section>
       
  <fotter>
 <div class="footer">
