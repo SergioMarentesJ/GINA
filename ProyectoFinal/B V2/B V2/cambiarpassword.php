@@ -1,5 +1,5 @@
 <?php
-    include "./config.php";
+    include "config.php";
     $email =$_POST['email'];
     $p1 =$_POST['p1'];
     $p2 =$_POST['p2'];

@@ -1,5 +1,5 @@
 <?php
-    include "./config.php";
+    include "config.php";
     $email =$_POST['email'];
     $bytes = random_bytes(5);
     $token =bin2hex($bytes);

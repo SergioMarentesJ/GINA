@@ -1,5 +1,7 @@
+
 <?php
 require 'config.php';
+
 if (!empty($_SESSION["id"])) {
   header("Location: index.php");
 }
@@ -37,6 +39,7 @@ if (isset($_POST["submit"])) {
 	<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
 	<link rel="stylesheet"
   href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
@@ -84,12 +87,6 @@ if (isset($_POST["submit"])) {
           <label for="contraseña">Contraseña: </label>
           <input type="password" class="form-control" name="contraseña" id="contraseña" required value="">
         </div>
-
-        
-
-
-
-
         <button id="login-btn" type="submit" class="btn btn-primary" name="submit" style="background:gray;">Login</button>
     </form>
     <br>
