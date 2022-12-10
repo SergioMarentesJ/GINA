@@ -56,7 +56,7 @@
       <?php
         }else{
       ?>
-          <a href="../ProyectoFinal/B V2/B V2/login.php" class="user"><i class="ri-user-fill"></i>Sign In</a>
+          <a href="../ProyectoFinal/B V2/B V2/capt.php" class="user"><i class="ri-user-fill"></i>Sign In</a>
 			    <a href="../ProyectoFinal/B V2/B V2/registration.php">Register</a>
       <?php
         }
@@ -79,29 +79,7 @@
     </section>
     
     
-      <section class="container text-light mt-5 rounded text-center">
-        <div class="row justify-content-center">
-            <div class="col-md-4 my-4">
-                <h1>Encuentranos en</h1>
-            </div>
-        </div>
-        <div class="row pb-5">
-           <div class="col-lg-6 ">
-                 COLECCION HOMBRE
-           </div>
-            <div class="col-lg-6 text-center text-lg-left pl-5">
-                <h3 class="mb-1 mt-5 mt-lg-0">Coleccion mujer</h3>
-                <p class="mb-0">codigos de descuento</p>
-                <p class="mb-0">Chhhhh</p>
-                <p>jjjjjj</p>
-                <h3 class="mb-1">kkkkkkkk</h3>
-                <p>llllllllll</p>
-                <h3 class="mb-1">Email</h3>
-                <p>ññññññ</p>
-            </div>
-            
-        </div>
-    </section>
+      
  <br>
 <!-- partial -->
   <script  src="js/script2.js"></script>

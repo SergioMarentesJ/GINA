@@ -62,7 +62,7 @@ $con = mysqli_connect("localhost", "root","","tienda") or die ("Error!");
       <?php
         }else{
       ?>
-          <a href="../ProyectoFinal/B V2/B V2/login.php" class="user"><i class="ri-user-fill"></i>Sign In</a>
+          <a href="../ProyectoFinal/B V2/B V2/capt.php" class="user"><i class="ri-user-fill"></i>Sign In</a>
 			    <a href="../ProyectoFinal/B V2/B V2/registration.php">Register</a>
       <?php
         }
