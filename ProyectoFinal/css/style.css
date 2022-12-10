@@ -249,3 +249,9 @@ footer{
     width: 100%;
   }
 }
+
+section.carrusel {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
