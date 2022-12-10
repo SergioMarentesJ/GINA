@@ -12,7 +12,7 @@ if (isset($_POST["submit"])) {
     if ($contraseña == $row['contraseña']) {
       $_SESSION["login"] = true;
       $_SESSION["id"] = $row["id"];
-      header("Location: index.php");
+      header("Location: ../../index.php");
     } else {
       echo "<script> alert('Contraseña Incorrecta'); </script>";
     }
@@ -53,19 +53,19 @@ if (isset($_POST["submit"])) {
 </head>
 
 <header>
-		<a href="../../index.html" class="logo"><i class="ri-home-heart-fill"></i><span>Silky</span></a>
+		<a href="../../index.php" class="logo"><i class="ri-home-heart-fill"></i><span>Silky</span></a>
 
 		<ul class="navbar">
-			<li><a href="../../index.html" class="active">Home</a></li>
-			<li><a href="../../Tienda.html">Tienda</a></li>
-			<li><a href="../../acerca_de.html">Acerca De</a></li>
-			<li><a href="../../Contactanos.html">Contactanos</a></li>
-			<li><a href="../../Ayuda.html">Ayuda</a></li>
+			<li><a href="../../index.php" class="active">Home</a></li>
+			<li><a href="../../Tienda.php">Tienda</a></li>
+			<li><a href="../../acerca_de.php">Acerca De</a></li>
+			<li><a href="../../Contactanos.php">Contactanos</a></li>
+			<li><a href="../../Ayuda.php">Ayuda</a></li>
 		</ul>
 
 		<div class="main">
-			<a href="../ProyectoFinal/B V2/B V2/login.php" class="user"><i class="ri-user-fill"></i>Sign In</a>
-			<a href="Registro.html">Register</a>
+			<a href="#" class="user"><i class="ri-user-fill"></i>Sign In</a>
+			<a href="../B V2/registration.php">Register</a>
 			<div class="bx bx-menu" id="menu-icon"></div>
 		</div>
 	</header>
@@ -97,7 +97,7 @@ if (isset($_POST["submit"])) {
     <a href="../restablecer.php">¿Olvidaste tu contraseña?</a>
     <br>
     <br>
-    <a href="registration.php">Registrate</a>
+    <br>
     </fieldset>
   </div>
   <br><br><br><br><br><br><br><br><br><br><br>

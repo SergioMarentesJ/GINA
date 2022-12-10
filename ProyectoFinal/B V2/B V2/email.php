@@ -10,12 +10,12 @@ $mensaje = '
   <title>Reestablecer contraseña</title>
 </head>
 <body>
-  <h1>Nombre de la pagina web</h1>
+  <h1>SILKY</h1>
   <div style="text-align:center; background-color:#ccc">
-    <p>Su contrasena es la siguiente:</p>
+    <p>Su codigo es la siguiente:</p>
     <h3>'.$codigo.'</h3>
     <p> <a 
-        href="http://localhost/cursophp/SOBAS/B%20V2/B%20V2/reset.php?email='.$email.'&token='.$token.'">
+        href="http://localhost/cursophp/PROYECTO/GINA/ProyectoFinal/B%20V2/reset.php?email='.$email.'&token='.$token.'">
         Para reestablecer contrasena da click aqui </a> </p>
     <p> <small>Si usted no envio este codigo favor de omitir </small></p>
     </div>

@@ -38,7 +38,7 @@
     <div class="container">
         <div class="row justify-content-md-center" style="margin: top 15%">
         <?php if($correcto){ ?>
-            <form class="col-3"action="http://localhost/cursophp/SOBAS/B%20V2/B%20V2/B%20V2/cambiarpassword.php" method="POST">
+            <form class="col-3"action="http://localhost/cursophp/PROYECTO/GINA/ProyectoFinal/B%20V2/B%20V2/cambiarpassword.php" method="POST">
                 <h2>Reestablecer Password</h2>
                 <div class="mb-3">
                     <label for="c" class="form-label">Nuevo password</label>

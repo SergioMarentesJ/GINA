@@ -34,9 +34,44 @@ if (isset($_POST["submit"])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/estilos.css">
   <title>Registro</title>
+  <link rel="stylesheet" type="text/css" href="../../css/style.css">
+	<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+	<link rel="stylesheet"
+  href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous"> 
+  
+  <style>
+    .container{
+            background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(https://escuelaemily.imgix.net/https%3A%2F%2Fi.pinimg.com%2Foriginals%2Fd5%2F83%2F54%2Fd5835434e5895b20056c9107c530030e.jpg?s=af3a2234086392e0f89378c4b92a3f82);
+            -webkit-background-size: cover;
+            background-size: cover;
+            background-position: center center;
+        }
+    </style>
 </head>
+
+<header>
+		<a href="../../index.php" class="logo"><i class="ri-home-heart-fill"></i><span>Silky</span></a>
+
+		<ul class="navbar">
+			<li><a href="../../index.php" class="active">Home</a></li>
+			<li><a href="../../Tienda.php">Tienda</a></li>
+			<li><a href="../../acerca_de.php">Acerca De</a></li>
+			<li><a href="../../Contactanos.php">Contactanos</a></li>
+			<li><a href="../../Ayuda.php">Ayuda</a></li>
+		</ul>
+
+		<div class="main">
+			<a href="../B V2/login.php" class="user"><i class="ri-user-fill"></i>Sign In</a>
+			<a href="#">Register</a>
+			<div class="bx bx-menu" id="menu-icon"></div>
+		</div>
+	</header>
+  <br><br><br><br>
 
 <body>
   <div class="contenedor1">
@@ -64,7 +99,6 @@ if (isset($_POST["submit"])) {
     </form>
     <br>
     <br>
-    <a href="login.php">Login</a>
     </fieldset>
   </div>
   </body>

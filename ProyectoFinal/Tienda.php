@@ -1,3 +1,22 @@
+<?php
+  require '../ProyectoFinal/B V2/B V2/config.php';
+  if(!empty($_SESSION["id"])){
+    $id = $_SESSION["id"];
+    $resultado = mysqli_query($conexion, "SELECT * FROM usuarios WHERE id = $id");
+    $row = mysqli_fetch_assoc($resultado);
+    $t=1;
+  }else{
+    $t=0;
+  }
+?>
+
+<?php 
+
+$con = mysqli_connect("localhost", "root","","tienda") or die ("Error!"); 
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,32 +55,104 @@
 		</ul>
 
 		<div class="main">
-			<a href="../ProyectoFinal/B V2/B V2/login.php" class="user"><i class="ri-user-fill"></i>Sign In</a>
-			<a href="Registro.php">Register</a>
+      <?php
+        if ($t==1){
+      ?>
+          <li style="color:white;">Bienvenido <?php echo $row["usuario"]; ?>.</li>
+          <li><a href="../ProyectoFinal/B V2/B V2/logout.php">Logout</a></li>
+      <?php
+        }else{
+      ?>
+          <a href="../ProyectoFinal/B V2/B V2/login.php" class="user"><i class="ri-user-fill"></i>Sign In</a>
+			    <a href="../ProyectoFinal/B V2/B V2/registration.php">Register</a>
+      <?php
+        }
+      ?>
 			<div class="bx bx-menu" id="menu-icon"></div>
 		</div>
 	</header>
       <br><br><br><br>
-      <section class="container text-light mt-5 rounded text-center">
+      <section class="container mt-5 rounded text-center">
         <div class="row justify-content-center">
             <div class="col-md-4 my-4">
-                <h1>MENU CATEGORIAS</h1>
+                <h1 style="color:white;">MENU CATEGORIAS</h1>
             </div>
         </div>
-        <div class="row pb-5">
-           <div class="col-lg-5 ">
-            <h1>CARRUSEL PRODUCTOS</h1>
+        <div>
+           <div >
+            <table width="500" style="background-color: #F9F9F9;" style="color:black;">
+              <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Categoria</th>
+                <th>Descripcion</th>
+                <th>Existencia</th>
+                <th>Precio</th>
+                <th>Imagen</th>
+              </tr>
+            <?php
+            $consulta = "SELECT * FROM productos";
+            $ejecutar = mysqli_query($con, $consulta);
+            $i = 0;
+            while ( $fila = mysqli_fetch_array($ejecutar)) {
+              $id = $fila['idp'];
+              $no = $fila['nom'];
+              $ca = $fila['cat'];
+              $de = $fila['des'];
+              $ex = $fila['exi'];
+              $pr = $fila['pre'];
+              $im = $fila['image'];
+
+              $i++;
+
+            ?>
+            <tr style="text-align:center;">
+            <td><?php echo $id; ?></td>
+            <td><?php echo $no; ?></td>
+            <td><?php echo $ca; ?></td>
+            <td><?php echo $de; ?></td>
+            <td><?php echo $ex; ?></td>
+            <td><?php echo $pr; ?></td>
+            <td><img style="width: 50px; height: 50px;" src=images/<?php echo $fila['image']; ?>></td>
+
+            <?php
+              if ($t==1 && $row["usuario"] == 'admin'){
+            ?>
+                <div>
+                  <td><a href="editar.php?idmodifi=<?php echo $id; ?>">Editar</a></td>
+                  <td><a href="./Tienda.php?borrar=<?php echo $id; ?>">Borrar</a></td>
+                </div>
+            <?php
+              }
+            ?>
+            <?php
+            if(isset($_GET['borrar'])){
+              $borrar_id = $_GET['borrar'];
+              $borrar = "DELETE FROM productos WHERE idp = '$borrar_id'";
+              $ejecutar = mysqli_query($con, $borrar);
+
+              if ($ejecutar){
+                echo "<script>alert('El elemento ha sido borrado!')</script>";
+                echo "<script>windoows.open('ABC.php','_self')</script>";
+                    header('Location: Tienda.php');
+              }
+            }
+            ?>
+
+            </tr>
+            <?php } ?>
+            </table>
            </div>
-            <div class="col-lg-6 text-center text-lg-left pl-5">
-                <h3 class="mb-1 mt-5 mt-lg-0">descripcion</h3>
-                <p class="mb-0">Universidad Autonoma de Aguascalientes, 20130</p>
-                <p class="mb-0">Aguascalientes</p>
-                <p>Mexico</p>
-                <h3 class="mb-1">Telefono</h3>
-                <p>+54 449 558 81 44</p>
-                <h3 class="mb-1">Email</h3>
-                <p>emilycristalmed@gmail.com</p>
-            </div>
+            
+            <?php
+              if ($t==1 && $row["usuario"] == 'admin'){
+            ?>
+                <div>
+                  <a href="../ProyectoFinal/ABC.php">Añadir productos</a>
+                </div>
+            <?php
+              }
+            ?>
             
         </div>
     </section>

@@ -6,7 +6,7 @@
     if($p1 == $p2){
         $p1=sha1($p1);
         $conexion->query("update usuarios set contraseña='$p1' where email='$email' ")or die($conexion->error);
-        echo "Todo bien";
+        header('Location: ./login.php');
 
     }else{
         echo "Las contraseñas no coinciden";

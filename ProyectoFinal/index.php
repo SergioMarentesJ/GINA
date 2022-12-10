@@ -1,3 +1,15 @@
+<?php
+  require '../ProyectoFinal/B V2/B V2/config.php';
+  if(!empty($_SESSION["id"])){
+    $id = $_SESSION["id"];
+    $resultado = mysqli_query($conexion, "SELECT * FROM usuarios WHERE id = $id");
+    $row = mysqli_fetch_assoc($resultado);
+    $t=1;
+  }else{
+    $t=0;
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,8 +48,19 @@
 		</ul>
 
 		<div class="main">
-			<a href="../ProyectoFinal/B V2/B V2/login.php" class="user"><i class="ri-user-fill"></i>Sign In</a>
-			<a href="Registro.php">Register</a>
+      <?php
+        if ($t==1){
+      ?>
+          <li style="color:white;">Bienvenido <?php echo $row["usuario"]; ?>.</li>
+          <li><a href="../ProyectoFinal/B V2/B V2/logout.php">Logout</a></li>
+      <?php
+        }else{
+      ?>
+          <a href="../ProyectoFinal/B V2/B V2/login.php" class="user"><i class="ri-user-fill"></i>Sign In</a>
+			    <a href="../ProyectoFinal/B V2/B V2/registration.php">Register</a>
+      <?php
+        }
+      ?>
 			<div class="bx bx-menu" id="menu-icon"></div>
 		</div>
 	</header>
@@ -51,11 +74,7 @@
         <div class="row pb-5">
            <div>
             <h1>(CARRUSEL PRODUCTOS)</h1>
-           </div>
-            <div>
-              <a href="../ProyectoFinal/ABC.php">Añadir productos</a>
-            </div>
-            
+           </div>            
         </div>
     </section>
     
