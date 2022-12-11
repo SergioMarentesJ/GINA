@@ -45,8 +45,8 @@ $con = mysqli_connect("localhost", "root","","tienda") or die ("Error!");
 <body>
     
     <header>
-		<a href="index.php" class="logo"><i class="ri-home-heart-fill"></i><span>Silky</span></a>
-
+		<a href="index.php" class="logo"><img src="images/LOGO1.png" alt="" width="60px" height="80px"><span>Silky</span></a>
+		
 		<ul class="navbar">
 			<li><a href="index.php" class="active">Home</a></li>
 			<li><a href="Tienda.php">Tienda</a></li>
