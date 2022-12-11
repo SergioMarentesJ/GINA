@@ -217,7 +217,7 @@
       </ul>
         </div>
       </div>
-    <div class="clearfix"></div>
+    <div class="clearfix"><a class="bottom_btn" href="#">&copy; SILKY</a></div><br>
   </div>
 </div>
          </fotter>
