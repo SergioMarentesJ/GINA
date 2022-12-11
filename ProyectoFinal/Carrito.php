@@ -73,87 +73,64 @@ $con = mysqli_connect("localhost", "root","","tienda") or die ("Error!");
 		</div>
 	</header>
       <br><br><br><br>
+      <br><br><br><br>
+      <br><br><br><br>
+      <br><br><br><br>
     
-      <section class="container text-light mt-5 rounded text-center">
-        <div class="row justify-content-center">
-            <div class="col-md-4 my-4">
-                <h1>CATEGORIAS</h1>
-            </div>
-        </div>
-        <div class="row pb-5">
-        <div class="col-lg-6 text-center pl-5">
-              <a href="Caballero.php" class="mb-1 mt-5 mt-lg-0">
-                <button type="button" class="btn btn-primary btn-lg btn-block">CABALLERO</button>
-              </a>
-            </div>
-            <div class="col-lg-6 text-center pl-5">
-              <a href="Dama.php" class="mb-1 mt-5 mt-lg-0">
-              <button type="button" class="btn btn-primary btn-lg btn-block">DAMA</button>
-              </a>
-            </div>
-        </div>
-    </section>
+        <?php
+            $band=0;
+            $checa= $_GET['idM'];
+            $canCom= $_GET['canProd'];
+            $invert= intval($checa);
+            $usr=$row["usuario"];
+            $mail=$row["email"];
 
-    <section class="container mt-5 rounded text-center">
-        <div class="row justify-content-center">
-            <div class="col-md-4 my-4">
-                <h1 style="color:white;">PRODUCTOS DAMA</h1>
-            </div>
-        </div>
-        <div class="row justify-content-center">
-           <div class="col-md-4 my-4">
-            <table width="500" style="background-color: #F9F9F9;" style="color:black;">
-            <tr>
-                <th>Nombre</th>
-                <th>Precio</th>
-                <th>Imagen</th>
-              </tr>
-            <?php
-            $consulta = "SELECT * FROM productos";
+            $consulta = "SELECT * FROM productos where idp= $invert; ";
             $ejecutar = mysqli_query($con, $consulta);
-            $i = 0;
+
             while ( $fila = mysqli_fetch_array($ejecutar)) {
-              $id = $fila['idp'];
-              $no = $fila['nom'];
-              $ca = $fila['cat'];
-              $de = $fila['des'];
-              $ex = $fila['exi'];
-              $pr = $fila['pre'];
-              $im = $fila['image'];
+                $id = $fila['idp'];
 
-              $i++;
+                $no = $fila['nom'];
+                $pr = $fila['pre'];
+                $ex = $fila['exi'];
+                $im = $fila['image'];
+            }
 
-            ?>
-            <tr style="text-align:center;">
-            <?php
-              if($ca== 'Dama'){
-            ?>
-            
-            <td>
-              <a href="MostrarP.php?idM=<?php echo $id; ?>" class="text-dark"><?php echo $no; ?></a>
-            </td>
-            <td><?php echo '$'. $pr; ?></td>
-            <td><img style="width: 50px; height: 50px;" src=images/<?php echo $fila['image']; ?>></td>
-            <?php
-              }
-            ?>
+            $consulta2 = "SELECT * FROM carrito where idp= $id; ";
+            $ejecutar2 = mysqli_query($con, $consulta2);
 
-            <?php
-              if ($t==1 && $row["usuario"] == 'admin'){
-            ?>
-                <div>
-                  <td><a href="editar.php?idmodifi=<?php echo $id; ?>">Editar</a></td>
-                  <td><a href="Tienda.php?borrar=<?php echo $id; ?>">Borrar</a></td>
-                </div>
-            <?php
-              }
-            ?>
-            </tr>
-            <?php } ?>
-            </table>
-           </div>
-        </div>
-    </section>
+            while ( $fila2 = mysqli_fetch_array($ejecutar2)) {
+                $band=1;
+            }
+            if($band== 1){
+                while ( $fila2 = mysqli_fetch_array($ejecutar2)) {
+                    $idcarrito = $fila2['idp'];
+                    $canc = $fila2['cantp'];
+                }
+            }else{
+                $idcarrito=0;
+            }
+
+            if($band== 1 && $id == $idcarrito){
+                $ne2 = "UPDATE carrito SET cantp='$canc + $canCom' WHERE idp='$idc'";
+                $fin2 = $con -> query($ne2);
+            }else{
+                $insertar = "INSERT INTO carrito  VALUES ('$usr', '$mail', '$id', '$no', '$im', '$pr', '$canCom')";
+		        $ejecutar = mysqli_query($con, $insertar);
+            }
+
+            $actua = $ex - $canCom;
+            echo $actua;
+
+            $ne = "UPDATE productos SET exi='$actua' WHERE idp='$id'";
+            $fin = $con -> query($ne);
+        ?>
+        
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
  <br>
 <!-- partial -->
   <script  src="js/script2.js"></script>
@@ -214,3 +191,10 @@ $con = mysqli_connect("localhost", "root","","tienda") or die ("Error!");
     <script src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js'></script><script  src="./script.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+

@@ -103,24 +103,8 @@ $con = mysqli_connect("localhost", "root","","tienda") or die ("Error!");
         <div class="row justify-content-center">
            <div class="col-md-4 my-4">
             <table width="500" style="background-color: #F9F9F9;" style="color:black;">
-              <tr>
-              <?php
-                if ($t==1 && $row["usuario"] == 'admin'){
-              ?>
-                <th>Id</th>
-              <?php
-                }
-              ?>
+            <tr>
                 <th>Nombre</th>
-                <?php
-                  if ($t==1 && $row["usuario"] == 'admin'){
-                ?>
-                  <th>Categoria</th>
-                <?php
-                  }
-                ?>
-                <th>Descripcion</th>
-                <th>Existencia</th>
                 <th>Precio</th>
                 <th>Imagen</th>
               </tr>
@@ -139,72 +123,25 @@ $con = mysqli_connect("localhost", "root","","tienda") or die ("Error!");
 
               $i++;
 
-              ?>
-                <tr style="text-align:center;">
+            ?>
+            <tr style="text-align:center;">
             <?php
               if($ca== 'Caballero'){
             ?>
-                <?php
-                if ($t==1 && $row["usuario"] == 'admin'){
-                ?>
-                <td><?php echo $id; ?></td>
-                <?php
-                }
-                ?>
-                <td><?php echo $no; ?></td>
-                <?php
-                if ($t==1 && $row["usuario"] == 'admin'){
-                ?>
-                <td><?php echo $ca; ?></td>
-                <?php
-                }
-                ?>
-                <td><?php echo $de; ?></td>
-                <td><?php echo $ex; ?></td>
-                <td><?php echo $pr; ?></td>
-                <td><img style="width: 50px; height: 50px;" src=images/<?php echo $fila['image']; ?>></td>
+            
+            <td>
+              <a href="MostrarP.php?idM=<?php echo $id; ?>" class="text-dark"><?php echo $no; ?></a>
+            </td>
+            <td><?php echo '$'. $pr; ?></td>
+            <td><img style="width: 50px; height: 50px;" src=images/<?php echo $fila['image']; ?>></td>
             <?php
               }
-            ?>
-
-            <?php
-              if ($t==1 && $row["usuario"] == 'admin'){
-            ?>
-                <div>
-                  <td><a href="editar.php?idmodifi=<?php echo $id; ?>">Editar</a></td>
-                  <td><a href="./Tienda.php?borrar=<?php echo $id; ?>">Borrar</a></td>
-                </div>
-            <?php
-              }
-            ?>
-            <?php
-            if(isset($_GET['borrar'])){
-              $borrar_id = $_GET['borrar'];
-              $borrar = "DELETE FROM productos WHERE idp = '$borrar_id'";
-              $ejecutar = mysqli_query($con, $borrar);
-
-              if ($ejecutar){
-                echo "<script>alert('El elemento ha sido borrado!')</script>";
-                echo "<script>windoows.open('ABC.php','_self')</script>";
-                    header('Location: Tienda.php');
-              }
-            }
-            ?>
-
+            ?>            
             </tr>
             <?php } ?>
             </table>
            </div>
             
-            <?php
-              if ($t==1 && $row["usuario"] == 'admin'){
-            ?>
-                <div>
-                  <a href="../ProyectoFinal/ABC.php">Añadir productos</a>
-                </div>
-            <?php
-              }
-            ?>
         </div>
     </section>
  <br>
