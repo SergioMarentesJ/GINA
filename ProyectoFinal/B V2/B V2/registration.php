@@ -17,7 +17,7 @@ if (isset($_POST["submit"])) {
       mysqli_query($conexion, $sql);
       $para  = $email;
       $título = 'CUPON POR REGISTRARSE';
-      $codigo= rand(1000,9999);
+      $codigo= 7491;
 
       $mensaje = '
       <html>

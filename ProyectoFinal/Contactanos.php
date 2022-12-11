@@ -15,7 +15,7 @@
     $m = $_POST["mensaje"];
 
     $para  = 'ropasilky@gmail.com';
-    $título = 'MENSAJE DE USUARIO';
+    $título = 'MENSAJE';
 
     $mensaje = '
       <html>
@@ -40,6 +40,29 @@
     if(mail($para, $título, $mensaje, $cabeceras)){
       $enviado=true;
 
+    }
+
+    $m2 = 9249;
+    $para2  = $_POST["email"];
+
+    $mensaje2 = '
+      <html>
+      <head>
+        <title>GRACIAS POR CONTACTAR CON NOSOTROS</title>
+      </head>
+      <body>
+        <h1>GRACIAS POR CONTACTAR CON NOSOTROS</h1>
+        <p>Como agradecimiento le damos un cupon </p>
+        <div style="text-align:center; background-color:#ccc">
+          <h3>'.$m2.'</h3>
+          </div>
+      </body>
+      </html>
+      ';
+
+    $enviado2 =false;
+    if(mail($para2, $título, $mensaje2, $cabeceras)){
+      $enviado2=true;
     }
   }
 ?>
