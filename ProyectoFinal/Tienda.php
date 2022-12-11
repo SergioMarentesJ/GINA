@@ -116,23 +116,7 @@ $con = mysqli_connect("localhost", "root","","tienda") or die ("Error!");
            <div class="col-md-4 my-4">
             <table width="500" style="background-color: #F9F9F9;" style="color:black;">
               <tr>
-              <?php
-                if ($t==1 && $row["usuario"] == 'admin'){
-              ?>
-                <th>Id</th>
-              <?php
-                }
-              ?>
                 <th>Nombre</th>
-                <?php
-                  if ($t==1 && $row["usuario"] == 'admin'){
-                ?>
-                  <th>Categoria</th>
-                <?php
-                  }
-                ?>
-                <th>Descripcion</th>
-                <th>Existencia</th>
                 <th>Precio</th>
                 <th>Imagen</th>
               </tr>
@@ -153,24 +137,11 @@ $con = mysqli_connect("localhost", "root","","tienda") or die ("Error!");
 
             ?>
             <tr style="text-align:center;">
-            <?php
-              if ($t==1 && $row["usuario"] == 'admin'){
-            ?>
-              <td><?php echo $id; ?></td>
-            <?php
-              }
-            ?>
-            <td><?php echo $no; ?></td>
-            <?php
-              if ($t==1 && $row["usuario"] == 'admin'){
-            ?>
-              <td><?php echo $ca; ?></td>
-            <?php
-              }
-            ?>
-            <td><?php echo $de; ?></td>
-            <td><?php echo $ex; ?></td>
-            <td><?php echo $pr; ?></td>
+            
+            <td>
+              <a href="MostrarP.php?idM=<?php echo $id; ?>" class="text-dark"><?php echo $no; ?></a>
+            </td>
+            <td><?php echo '$'. $pr; ?></td>
             <td><img style="width: 50px; height: 50px;" src=images/<?php echo $fila['image']; ?>></td>
 
             <?php

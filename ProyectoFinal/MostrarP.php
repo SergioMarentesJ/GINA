@@ -8,14 +8,16 @@
   }else{
     $t=0;
   }
+
+    $con = mysqli_connect("localhost", "root","","tienda") or die ("Error!"); 
+
+
+    if (isset($_POST["submit"])) {
+        $iM = $_POST["idM"];
+        $cP = $_POST["cantProd"];
+        header('Location: Carrito.php?idM='.$iM.'&canProd='.$cP.'');
+    }
 ?>
-
-<?php 
-
-$con = mysqli_connect("localhost", "root","","tienda") or die ("Error!"); 
-
-?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,7 +25,7 @@ $con = mysqli_connect("localhost", "root","","tienda") or die ("Error!");
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Silky</title>
-  <link rel="icon" type="image/jpg" href="./images/Silky.jpeg">
+    <link rel="icon" type="image/jpg" href="./images/Silky.jpeg">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
 	<link rel="stylesheet"
@@ -43,8 +45,7 @@ $con = mysqli_connect("localhost", "root","","tienda") or die ("Error!");
     </style>
 </head>
 <body>
-    
-    <header>
+<header>
 		<a href="index.php" class="logo"><i class="ri-home-heart-fill"></i><span>Silky</span></a>
 
 		<ul class="navbar">
@@ -72,88 +73,47 @@ $con = mysqli_connect("localhost", "root","","tienda") or die ("Error!");
 			<div class="bx bx-menu" id="menu-icon"></div>
 		</div>
 	</header>
-      <br><br><br><br>
     
-      <section class="container text-light mt-5 rounded text-center">
-        <div class="row justify-content-center">
-            <div class="col-md-4 my-4">
-                <h1>CATEGORIAS</h1>
-            </div>
-        </div>
-        <div class="row pb-5">
-        <div class="col-lg-6 text-center pl-5">
-              <a href="Caballero.php" class="mb-1 mt-5 mt-lg-0">
-                <button type="button" class="btn btn-primary btn-lg btn-block">CABALLERO</button>
-              </a>
-            </div>
-            <div class="col-lg-6 text-center pl-5">
-              <a href="Dama.php" class="mb-1 mt-5 mt-lg-0">
-              <button type="button" class="btn btn-primary btn-lg btn-block">DAMA</button>
-              </a>
-            </div>
-        </div>
-    </section>
-
-    <section class="container mt-5 rounded text-center">
-        <div class="row justify-content-center">
-            <div class="col-md-4 my-4">
-                <h1 style="color:white;">PRODUCTOS DAMA</h1>
-            </div>
-        </div>
-        <div class="row justify-content-center">
-           <div class="col-md-4 my-4">
-            <table width="500" style="background-color: #F9F9F9;" style="color:black;">
-            <tr>
-                <th>Nombre</th>
-                <th>Precio</th>
-                <th>Imagen</th>
-              </tr>
-            <?php
-            $consulta = "SELECT * FROM productos";
+      <br><br><br><br><br><br>
+    
+      <?php
+            $checa= $_GET['idM']; 
+            $consulta = "SELECT * FROM productos where idp= $checa; ";
             $ejecutar = mysqli_query($con, $consulta);
-            $i = 0;
+
             while ( $fila = mysqli_fetch_array($ejecutar)) {
-              $id = $fila['idp'];
-              $no = $fila['nom'];
-              $ca = $fila['cat'];
-              $de = $fila['des'];
-              $ex = $fila['exi'];
-              $pr = $fila['pre'];
-              $im = $fila['image'];
-
-              $i++;
-
+                $id = $fila['idp'];
+                $no = $fila['nom'];
+                $ca = $fila['cat'];
+                $de = $fila['des'];
+                $ex = $fila['exi'];
+                $pr = $fila['pre'];
+                $im = $fila['image'];
+            }
             ?>
-            <tr style="text-align:center;">
-            <?php
-              if($ca== 'Dama'){
-            ?>
-            
-            <td>
-              <a href="MostrarP.php?idM=<?php echo $id; ?>" class="text-dark"><?php echo $no; ?></a>
-            </td>
-            <td><?php echo '$'. $pr; ?></td>
-            <td><img style="width: 50px; height: 50px;" src=images/<?php echo $fila['image']; ?>></td>
-            <?php
-              }
-            ?>
-
-            <?php
-              if ($t==1 && $row["usuario"] == 'admin'){
-            ?>
-                <div>
-                  <td><a href="editar.php?idmodifi=<?php echo $id; ?>">Editar</a></td>
-                  <td><a href="Tienda.php?borrar=<?php echo $id; ?>">Borrar</a></td>
-                </div>
-            <?php
-              }
-            ?>
+            <tr">
+                <img style="width: 260px; height: 350px;" src=images/<?php echo $im; ?>>
+                <h1><?php echo $no; ?></h1>
+                <h2>$<?php echo $pr; ?> mxm</h2>
+                <h4>Categoria: <?php echo $ca; ?></h4>
+                <h5>Descripcion: </h5>
+                <?php echo $de; ?>
+                Numero de articulos:<?php echo $ex; ?>
             </tr>
-            <?php } ?>
-            </table>
-           </div>
-        </div>
-    </section>
+            <form action="" method="POST">
+                <input type="hidden" name="idM" id="idM" value="<?php echo $id; ?>">
+                Cantidad a comprar:
+                <input type="number" name="cantProd" id="cantProd">
+                <br> <br>
+                <?php
+                    if ($t==1){
+                ?>
+                    
+                    <button type="submit" class="btn btn-primary btn-lg btn-block" name="submit">Agregar al carrito</button>
+                <?php
+                    }
+                ?>
+            </form>
  <br>
 <!-- partial -->
   <script  src="js/script2.js"></script>
