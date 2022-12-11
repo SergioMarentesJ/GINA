@@ -73,9 +73,9 @@ $con = mysqli_connect("localhost", "root","","tienda") or die ("Error!");
       <br><br><br><br><br>
  <form method="POST" action="ABC.php">
 	 <label>ID:<br></label>
-	 <input type="number" name="idp" placeholder = "Ingrese el ID"><br />
+	 <input type="number" name="idp" placeholder = "Ingrese el ID"><br /><br>
 	 <label>Nombre:<br> </label>
-	 <input type="text" name="nom" placeholder = "Ingrese el nombre del producto"><br />
+	 <input type="text" name="nom" placeholder = "Ingrese el nombre del producto"><br /><br>
 	 <label>Categoria:<br></label>
 	 <input type="text" name="cat" placeholder = "Ingrese la categoria"><br /><br>
 	 <label>Descripcion:<br></label>

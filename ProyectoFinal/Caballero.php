@@ -135,27 +135,33 @@ $con = mysqli_connect("localhost", "root","","tienda") or die ("Error!");
 
               $i++;
 
-            ?>
-            <tr style="text-align:center;">
+              ?>
+                <tr style="text-align:center;">
             <?php
-              if ($t==1 && $row["usuario"] == 'admin'){
+              if($ca== 'Caballero'){
             ?>
-              <td><?php echo $id; ?></td>
+                <?php
+                if ($t==1 && $row["usuario"] == 'admin'){
+                ?>
+                <td><?php echo $id; ?></td>
+                <?php
+                }
+                ?>
+                <td><?php echo $no; ?></td>
+                <?php
+                if ($t==1 && $row["usuario"] == 'admin'){
+                ?>
+                <td><?php echo $ca; ?></td>
+                <?php
+                }
+                ?>
+                <td><?php echo $de; ?></td>
+                <td><?php echo $ex; ?></td>
+                <td><?php echo $pr; ?></td>
+                <td><img style="width: 50px; height: 50px;" src=images/<?php echo $fila['image']; ?>></td>
             <?php
               }
             ?>
-            <td><?php echo $no; ?></td>
-            <?php
-              if ($t==1 && $row["usuario"] == 'admin'){
-            ?>
-              <td><?php echo $ca; ?></td>
-            <?php
-              }
-            ?>
-            <td><?php echo $de; ?></td>
-            <td><?php echo $ex; ?></td>
-            <td><?php echo $pr; ?></td>
-            <td><img style="width: 50px; height: 50px;" src=images/<?php echo $fila['image']; ?>></td>
 
             <?php
               if ($t==1 && $row["usuario"] == 'admin'){
