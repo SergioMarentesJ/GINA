@@ -16,6 +16,18 @@ $con = mysqli_connect("localhost", "root","","tienda") or die ("Error!");
 
 ?>
 
+<?php
+            if(isset($_GET['borrar'])){
+              $borrar_id = $_GET['borrar'];
+              $borrar = "DELETE FROM productos WHERE idp = '$borrar_id'";
+              $ejecutar = mysqli_query($con, $borrar);
+
+              if ($ejecutar){
+                echo "<script>alert('El elemento ha sido borrado!')</script>";
+                echo "<script>windoows.open('Tienda.php','_self')</script>";
+              }
+            }
+            ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -162,25 +174,11 @@ $con = mysqli_connect("localhost", "root","","tienda") or die ("Error!");
             ?>
                 <div>
                   <td><a href="editar.php?idmodifi=<?php echo $id; ?>">Editar</a></td>
-                  <td><a href="./Tienda.php?borrar=<?php echo $id; ?>">Borrar</a></td>
+                  <td><a href="Tienda.php?borrar=<?php echo $id; ?>">Borrar</a></td>
                 </div>
             <?php
               }
             ?>
-            <?php
-            if(isset($_GET['borrar'])){
-              $borrar_id = $_GET['borrar'];
-              $borrar = "DELETE FROM productos WHERE idp = '$borrar_id'";
-              $ejecutar = mysqli_query($con, $borrar);
-
-              if ($ejecutar){
-                echo "<script>alert('El elemento ha sido borrado!')</script>";
-                echo "<script>windoows.open('ABC.php','_self')</script>";
-                    header('Location: Tienda.php');
-              }
-            }
-            ?>
-
             </tr>
             <?php } ?>
             </table>

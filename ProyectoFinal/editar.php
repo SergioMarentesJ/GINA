@@ -11,8 +11,6 @@
 ?>
 <?php
    session_start();
-     
-   
     $conexion  = mysqli_connect("localhost", "root","","tienda") or die ("Error!"); 
 
         
@@ -39,6 +37,7 @@
         image='$siete' 
         WHERE idp='$cod'";
         $fin = $conexion -> query($ne);
+        header('Location: Tienda.php');
     } catch (mysqli_sql_exception $e) { 
         var_dump($e);
         exit; 
@@ -78,7 +77,7 @@
 <body>
         <?php 
         if(empty ($_GET['idmodifi'])){
-            header('Location: mostrar.php');
+            header('Location: Tienda.php');
         }else{
             $idmod=$_GET['idmodifi'];
         }
@@ -114,7 +113,7 @@
       <br><br><br><br><br>
         <div class="derecha">
         
-            <form class="estiloformulario" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method='post'>
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method='post'>
             <ul class="wrapper">
                 <li class="form-row">
                     <input type="hidden"  name="idmo" value="<?php echo $idmod; ?>>">
