@@ -8,6 +8,40 @@
   }else{
     $t=0;
   }
+
+  if (isset($_POST["submit"])) {
+    $usuario = $_POST["usuario"];
+    $email = $_POST["email"];
+    $m = $_POST["mensaje"];
+
+    $para  = 'ropasilky@gmail.com';
+    $título = 'MENSAJE DE USUARIO';
+
+    $mensaje = '
+      <html>
+      <head>
+        <title>MENSAJE DE USUARIO</title>
+      </head>
+      <body>
+        <p>De '.$email.' para ropasilky@gmail.com</p>
+        <p>El mensaje de '.$usuario.', es el siguiente:</p>
+        <div style="text-align:center; background-color:#ccc">
+          <h3>'.$m.'</h3>
+          </div>
+      </body>
+      </html>
+      ';
+
+    // Para enviar un correo HTML, debe establecerse la cabecera Content-type
+    $cabeceras  = 'MIME-Version: 1.0' . "\r\n";
+    $cabeceras .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+
+    $enviado =false;
+    if(mail($para, $título, $mensaje, $cabeceras)){
+      $enviado=true;
+
+    }
+  }
 ?>
 
 <!DOCTYPE html>
@@ -68,35 +102,6 @@
       <section class="container text-light mt-5 rounded text-center">
         <div class="row justify-content-center">
             <div class="col-md-4 my-4">
-                <h1>Contactanos</h1>
-            </div>
-        </div>
-        <div class="row pb-5">
-           <div class="col-lg-5 ">
-               <form action="#!" class="bg-light rounded p-2 ml-lg-4 p-md-4">
-                   <input type="text" class="form-control mb-2 " id="name" placeholder="Nombre">
-                   <input type="email" class="form-control mb-2" id="email" placeholder="Email">
-                   <textarea class="form-control mb-4" id="message" placeholder="Mensaje" rows="3"></textarea>
-                   <input class="btn btn-primary btn-block" type="submit" value="Enviar">
-               </form>
-           </div>
-            <div class="col-lg-6 text-center text-lg-left pl-5">
-                <h3 class="mb-1 mt-5 mt-lg-0">Dirección</h3>
-                <p class="mb-0">Universidad Autonoma de Aguascalientes, 20130</p>
-                <p class="mb-0">Aguascalientes</p>
-                <p>Mexico</p>
-                <h3 class="mb-1">Telefono</h3>
-                <p>+54 449 558 81 44</p>
-                <h3 class="mb-1">Email</h3>
-                <p>emilycristalmed@gmail.com</p>
-            </div>
-            
-        </div>
-    </section>
-    
-    <section class="container text-light mt-5 rounded text-center">
-        <div class="row justify-content-center">
-            <div class="col-md-4 my-4">
                 <h1>Encuentranos en</h1>
             </div>
         </div>
@@ -105,19 +110,45 @@
                   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3701.5085115577617!2d-102.3178233525165!3d21.914994151499513!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8429eee2702925f9%3A0xc9ec8e09a4497bfc!2sUniversidad%20Aut%C3%B3noma%20de%20Aguascalientes%2C%2020130%20Aguascalientes%2C%20Ags.!5e0!3m2!1ses-419!2smx!4v1670388451764!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
            </div>
             <div class="col-lg-6 text-center text-lg-left pl-5">
-                <h3 class="mb-1 mt-5 mt-lg-0">Dirección</h3>
-                <p class="mb-0">Rivadavia 1562</p>
-                <p class="mb-0">Capital Federal</p>
-                <p>Argentina</p>
+            <h3 class="mb-1 mt-5 mt-lg-0">Dirección</h3>
+                <p class="mb-0">Universidad Autonoma de Aguascalientes, 20130</p>
+                <p class="mb-0">Aguascalientes</p>
+                <p>Mexico</p>
                 <h3 class="mb-1">Telefono</h3>
-                <p>+54 11 1234-9874</p>
+                <p>+54 449 558 81 44</p>
                 <h3 class="mb-1">Email</h3>
-                <p>contactanos@gmail.com</p>
+                <p>ropasilky@gmail.com</p>
             </div>
             
         </div>
     </section>
-
+    <br>
+      <section class="container text-light mt-5 rounded text-center">
+        <div class="row justify-content-center">
+            <div class="col-md-4 my-4">
+                <h1>Contáctanos</h1>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-4 my-4">
+              <form class="bg-light rounded p-2 ml-lg-4 p-md-4" action="" method="post" autocomplete="off">
+                <div class="mb-3">
+                  <label class="form-check-label" for="usuario" style="color: black;">Usuario : </label>
+                  <input type="text" class="form-control" name="usuario" id="usuario" required value="">
+                </div>
+                <div class="mb-3">
+                  <label class="form-check-label" for="email" style="color: black;">Email : </label>
+                  <input type="email" class="form-control" name="email" id="email" required value="">
+                </div>
+                <div class="mb-3">
+                  <label class="form-check-label" for="mensaje" style="color: black;">Mensaje : </label>
+                  <textarea class="form-control" name="mensaje" id="mensaje" required value=""></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" name="submit" style="background:blue;">Enviar</button>
+              </form>
+           </div> 
+        </div>
+    </section>
 
     <br> <br> <br> <br> <br>
  
