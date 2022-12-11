@@ -21,4 +21,4 @@ if (!empty($_SESSION["id"])) {
   <a href="logout.php">Logout</a>
 </body>
 
-</html>
+</html>     
