@@ -255,3 +255,14 @@ section.carrusel {
 	align-items: center;
 	justify-content: center;
 }
+
+.bottom_btn{
+	background-color: #333333;
+    color: #ffffff;
+    display: table;
+    font-size: 28px;
+    margin: 60px auto 20px;
+    padding: 10px 25px;
+    text-align: center;
+    text-transform: uppercase;
+}
