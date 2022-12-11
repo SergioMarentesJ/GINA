@@ -8,6 +8,40 @@
   }else{
     $t=0;
   }
+
+  if (isset($_POST["submit"])) {
+    $usuario = $_POST["usuario"];
+    $email = $_POST["email"];
+    $m = $_POST["mensaje"];
+
+    $para  = 'ropasilky@gmail.com';
+    $título = 'MENSAJE DE USUARIO';
+
+    $mensaje = '
+      <html>
+      <head>
+        <title>MENSAJE DE USUARIO</title>
+      </head>
+      <body>
+        <p>De '.$email.' para ropasilky@gmail.com</p>
+        <p>El mensaje de '.$usuario.', es el siguiente:</p>
+        <div style="text-align:center; background-color:#ccc">
+          <h3>'.$m.'</h3>
+          </div>
+      </body>
+      </html>
+      ';
+
+    // Para enviar un correo HTML, debe establecerse la cabecera Content-type
+    $cabeceras  = 'MIME-Version: 1.0' . "\r\n";
+    $cabeceras .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+
+    $enviado =false;
+    if(mail($para, $título, $mensaje, $cabeceras)){
+      $enviado=true;
+
+    }
+  }
 ?>
 
 <!DOCTYPE html>
@@ -73,12 +107,21 @@
         </div>
         <div class="row pb-5">
            <div class="col-lg-5 ">
-               <form action="#!" class="bg-light rounded p-2 ml-lg-4 p-md-4">
-                   <input type="text" class="form-control mb-2 " id="name" placeholder="Nombre">
-                   <input type="email" class="form-control mb-2" id="email" placeholder="Email">
-                   <textarea class="form-control mb-4" id="message" placeholder="Mensaje" rows="3"></textarea>
-                   <input class="btn btn-primary btn-block" type="submit" value="Enviar">
-               </form>
+              <form class="bg-light rounded p-2 ml-lg-4 p-md-4" action="" method="post" autocomplete="off">
+                <div class="mb-3">
+                  <label class="form-check-label" for="usuario" style="color: black;">Usuario : </label>
+                  <input type="text" class="form-control" name="usuario" id="usuario" required value="">
+                </div>
+                <div class="mb-3">
+                  <label class="form-check-label" for="email" style="color: black;">Email : </label>
+                  <input type="email" class="form-control" name="email" id="email" required value="">
+                </div>
+                <div class="mb-3">
+                  <label class="form-check-label" for="mensaje" style="color: black;">Mensaje : </label>
+                  <textarea class="form-control" name="mensaje" id="mensaje" required value=""></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" name="submit" style="background:blue;">Enviar</button>
+              </form>
            </div>
             <div class="col-lg-6 text-center text-lg-left pl-5">
                 <h3 class="mb-1 mt-5 mt-lg-0">Dirección</h3>
@@ -88,7 +131,7 @@
                 <h3 class="mb-1">Telefono</h3>
                 <p>+54 449 558 81 44</p>
                 <h3 class="mb-1">Email</h3>
-                <p>emilycristalmed@gmail.com</p>
+                <p>ropasilky@gmail.com</p>
             </div>
             
         </div>
