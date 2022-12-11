@@ -23,6 +23,7 @@ $con = mysqli_connect("localhost", "root","","tienda") or die ("Error!");
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Silky</title>
+  <link rel="icon" type="image/jpg" href="./images/Silky.jpeg">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
 	<link rel="stylesheet"
@@ -80,13 +81,16 @@ $con = mysqli_connect("localhost", "root","","tienda") or die ("Error!");
             </div>
         </div>
         <div class="row pb-5">
-          <div class="col-lg-6 text-center pl-5">
-              <a href="Caballero.php" class="mb-1 mt-5 mt-lg-0">CABALLERO</a>
+        <div class="col-lg-6 text-center pl-5">
+              <a href="Caballero.php" class="mb-1 mt-5 mt-lg-0">
+                <button type="button" class="btn btn-primary btn-lg btn-block">CABALLERO</button>
+              </a>
             </div>
             <div class="col-lg-6 text-center pl-5">
-              <a href="Dama.php" class="mb-1 mt-5 mt-lg-0">DAMA</a>
+              <a href="Dama.php" class="mb-1 mt-5 mt-lg-0">
+              <button type="button" class="btn btn-primary btn-lg btn-block">DAMA</button>
+              </a>
             </div>
-            
         </div>
     </section>
 
