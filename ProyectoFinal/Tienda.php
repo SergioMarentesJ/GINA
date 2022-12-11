@@ -75,16 +75,28 @@ $con = mysqli_connect("localhost", "root","","tienda") or die ("Error!");
       <section class="container mt-5 rounded text-center">
         <div class="row justify-content-center">
             <div class="col-md-4 my-4">
-                <h1 style="color:white;">MENU CATEGORIAS</h1>
+                <h1 style="color:white;">PRODUCTOS</h1>
             </div>
         </div>
         <div>
            <div >
             <table width="500" style="background-color: #F9F9F9;" style="color:black;">
               <tr>
+              <?php
+                if ($t==1 && $row["usuario"] == 'admin'){
+              ?>
                 <th>Id</th>
+              <?php
+                }
+              ?>
                 <th>Nombre</th>
-                <th>Categoria</th>
+                <?php
+                  if ($t==1 && $row["usuario"] == 'admin'){
+                ?>
+                  <th>Categoria</th>
+                <?php
+                  }
+                ?>
                 <th>Descripcion</th>
                 <th>Existencia</th>
                 <th>Precio</th>
@@ -107,9 +119,21 @@ $con = mysqli_connect("localhost", "root","","tienda") or die ("Error!");
 
             ?>
             <tr style="text-align:center;">
-            <td><?php echo $id; ?></td>
+            <?php
+              if ($t==1 && $row["usuario"] == 'admin'){
+            ?>
+              <td><?php echo $id; ?></td>
+            <?php
+              }
+            ?>
             <td><?php echo $no; ?></td>
-            <td><?php echo $ca; ?></td>
+            <?php
+              if ($t==1 && $row["usuario"] == 'admin'){
+            ?>
+              <td><?php echo $ca; ?></td>
+            <?php
+              }
+            ?>
             <td><?php echo $de; ?></td>
             <td><?php echo $ex; ?></td>
             <td><?php echo $pr; ?></td>
