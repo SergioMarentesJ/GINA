@@ -69,7 +69,7 @@
       <section class="container text-light mt-5 rounded text-center">
         <div class="row justify-content-center">
             <div class="col-md-4 my-4">
-                <h1>PRODUCTOS</h1>
+                <h1>SILKY</h1>
             </div>
         </div>
         <div class="row pb-5">
