@@ -137,17 +137,6 @@ $con = mysqli_connect("localhost", "root","","tienda") or die ("Error!");
             <?php
               }
             ?>
-
-            <?php
-              if ($t==1 && $row["usuario"] == 'admin'){
-            ?>
-                <div>
-                  <td><a href="editar.php?idmodifi=<?php echo $id; ?>">Editar</a></td>
-                  <td><a href="Tienda.php?borrar=<?php echo $id; ?>">Borrar</a></td>
-                </div>
-            <?php
-              }
-            ?>
             </tr>
             <?php } ?>
             </table>

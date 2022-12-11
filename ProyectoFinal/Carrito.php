@@ -78,6 +78,7 @@ $con = mysqli_connect("localhost", "root","","tienda") or die ("Error!");
       <br><br><br><br>
     
         <?php
+            $idcarrito =0;
             $band=0;
             $checa= $_GET['idM'];
             $canCom= $_GET['canProd'];
