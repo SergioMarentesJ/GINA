@@ -110,11 +110,11 @@
  <br>
 <!-- partial -->
   <script  src="js/script2.js"></script>
-      
+  
       	<!--js link--->
 	<script type="text/javascript" src="js/script.js"></script>
-    
-  <fotter>
+  
+  <fotter style=text-align:center>
 <div class="footer">
   <div class="contain">
   <div class="col">
