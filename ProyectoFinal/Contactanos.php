@@ -126,11 +126,11 @@
       <section class="container text-light mt-5 rounded text-center">
         <div class="row justify-content-center">
             <div class="col-md-4 my-4">
-                <h1>Contactanos</h1>
+                <h1>Contáctanos</h1>
             </div>
         </div>
-        <div class="row pb-5">
-           <div class="col-lg-5 ">
+        <div class="row justify-content-center">
+            <div class="col-md-4 my-4">
               <form class="bg-light rounded p-2 ml-lg-4 p-md-4" action="" method="post" autocomplete="off">
                 <div class="mb-3">
                   <label class="form-check-label" for="usuario" style="color: black;">Usuario : </label>
