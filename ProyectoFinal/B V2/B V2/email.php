@@ -39,5 +39,3 @@ if(mail($para, $título, $mensaje, $cabeceras)){
   $enviado=true;
 
 }
-
-?>
