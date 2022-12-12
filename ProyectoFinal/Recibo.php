@@ -9,10 +9,12 @@
     $t=0;
   }
 
-$con = mysqli_connect("localhost", "root","","tienda") or die ("Error!"); 
+    $con = mysqli_connect("localhost", "root","","tienda") or die ("Error!"); 
 
+    if (isset($_POST["submit"])) {
+        
+    }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +22,7 @@ $con = mysqli_connect("localhost", "root","","tienda") or die ("Error!");
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Silky</title>
-  <link rel="icon" type="image/jpg" href="./images/Silky.jpeg">
+    <link rel="icon" type="image/jpg" href="./images/Silky.jpeg">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
 	<link rel="stylesheet"
@@ -40,10 +42,9 @@ $con = mysqli_connect("localhost", "root","","tienda") or die ("Error!");
     </style>
 </head>
 <body>
-    
-    <header>
+<header>
 		<a href="index.php" class="logo"><img src="images/LOGO1.png" alt="" width="60px" height="80px"><span>Silky</span></a>
-		
+
 		<ul class="navbar">
 			<li><a href="index.php" class="active">Home</a></li>
 			<li><a href="Tienda.php">Tienda</a></li>
@@ -69,8 +70,23 @@ $con = mysqli_connect("localhost", "root","","tienda") or die ("Error!");
 			<div class="bx bx-menu" id="menu-icon"></div>
 		</div>
 	</header>
-      <br><br><br><br>
-      <br><br>
+    
+      <br><br><br><br><br><br>
+      
+      <div align="center">
+        <h1>RECIBO DE PAGO POR OXXO</h1>
+      </div>
+      <br>
+      <?php
+        $nombre= $_GET['no'];
+        $apellidos= $_GET['ap'];
+        $direccion= $_GET['dir'];
+        $correo= $_GET['em'];
+      ?>
+      <div align="center">
+        <img src="./images/oxxo.png" alt="" width="25%" height="25%" >
+      </div>
+      <br>
       <center><table width="500" border="2" style="background-color: #F9F9F9; ">
       <tr align="center">
 		<th>Nombre</th>
@@ -80,10 +96,12 @@ $con = mysqli_connect("localhost", "root","","tienda") or die ("Error!");
 	</tr></center>
     
       <?php
+      $su=0;
             $consulta = "SELECT * FROM carrito";
             $ejecutar = mysqli_query($con, $consulta);
             $i=0;
             while ( $fila = mysqli_fetch_array($ejecutar)) {
+                $mu=0;
                 $us = $fila['usuario'];
                 $em = $fila['email'];
                 $idpro = $fila['idp'];
@@ -91,7 +109,14 @@ $con = mysqli_connect("localhost", "root","","tienda") or die ("Error!");
                 $ima = $fila['image'];
                 $prec = $fila['pre'];
                 $cantp = $fila['cantp'];
+
+                $mu= $cantp * $prec;
+
+                $su=$su+ $mu;
+
+
                 $i++;
+
             ?>
             <tr align="center">
                 <td><?php echo $no; ?></td>
@@ -99,13 +124,25 @@ $con = mysqli_connect("localhost", "root","","tienda") or die ("Error!");
                 <td><?php echo $cantp; ?></td>
                 <td><img style="width: 260px; height: 350px;" src=images/<?php echo $ima; ?>></td>
             </tr>
-            <?php } ?>
+            <?php } 
+            $impuesto = $su * 0.16;
+            $codigo= rand(100000000000000,999999999999999);
+            ?>
             </table>
-            <button type="submit" class="btn btn-primary btn-lg btn-block" onclick="window.location.href='http://localhost/cursophp/PROYECTO/GINA/ProyectoFinal/Compra.php'">Proceder al pago</button>
-        
-
-
-<br><br><br>
+            <br>
+            <h1>Precio sin impuesto: $ <?php echo $su ?></h1>
+            <h1>Costo de envio: Gratis</h1>
+            <h1>Impuesto: $ <?php echo $impuesto ?></h1>
+            <h1>TOTAL A PAGAR: $ <?php echo $impuesto + $su ?></h1>
+            <br>
+            <h3>Dictale el siguiente codigo al cajero del oxxo: </h3>
+            <h2><?php echo $codigo ?></h2>
+            <br>
+            <h6>Direccion de entrega: <?php echo $direccion ?></h6>
+            <h6>A nombre de: <?php echo $nombre . " ". $apellidos ?></h6>
+            <h6>Correo de facturacion: <?php echo $correo ?></h6>
+            
+            
  <br>
 <!-- partial -->
   <script  src="js/script2.js"></script>
@@ -166,10 +203,3 @@ $con = mysqli_connect("localhost", "root","","tienda") or die ("Error!");
     <script src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js'></script><script  src="./script.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
