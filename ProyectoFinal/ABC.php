@@ -71,7 +71,7 @@ $con = mysqli_connect("localhost", "root","","tienda") or die ("Error!");
 			<div class="bx bx-menu" id="menu-icon"></div>
 		</div>
 	</header>
-      <br><br><br><br><br>
+      <br><br><br><br><br><br><br>
  <form method="POST" action="ABC.php">
 	 <label>ID:<br></label>
 	 <input type="number" name="idp" placeholder = "Ingrese el ID"><br /><br>
@@ -111,7 +111,7 @@ $con = mysqli_connect("localhost", "root","","tienda") or die ("Error!");
 	}
 ?>
 <br/>
-<br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br>
 
 			<fotter>
 			<div class="footer">

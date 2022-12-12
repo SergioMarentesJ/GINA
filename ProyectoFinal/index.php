@@ -55,6 +55,8 @@
       ?>
           <li style="color:white;">Bienvenido <?php echo $row["usuario"]; ?>.</li>
           <li><a href="../ProyectoFinal/B V2/B V2/logout.php">Logout</a></li>
+          <i class="bi bi-cart"></i>
+          <a href="Carrito.php">Ver carrito</a>
       <?php
         }else{
       ?>

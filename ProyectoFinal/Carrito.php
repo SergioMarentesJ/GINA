@@ -8,9 +8,6 @@
   }else{
     $t=0;
   }
-?>
-
-<?php 
 
 $con = mysqli_connect("localhost", "root","","tienda") or die ("Error!"); 
 
@@ -73,44 +70,37 @@ $con = mysqli_connect("localhost", "root","","tienda") or die ("Error!");
 		</div>
 	</header>
       <br><br><br><br>
-      <br><br><br><br>
-      <br><br><br><br>
-      <br><br><br><br>
+      <br><br>
     
       <?php
-            $band=0;
-            $checa= $_GET['idM'];
-            $canCom= $_GET['canProd'];
-            $invert= intval($checa);
             $usr=$row["usuario"];
-            $mail=$row["email"];
 
-            $consulta = "SELECT * FROM productos where idp= $invert; ";
+            $consulta = "SELECT * FROM carrito where usuario= '$usr' ";
             $ejecutar = mysqli_query($con, $consulta);
 
             while ( $fila = mysqli_fetch_array($ejecutar)) {
-                $id = $fila['idp'];
-
-                $no = $fila['nom'];
-                $pr = $fila['pre'];
-                $ex = $fila['exi'];
-                $im = $fila['image'];
+                $u= $fila['usuario'];
+                $e= $fila['email'];
+                $i= $fila['idp'];
+                $n= $fila['nomp'];
+                $im= $fila['image'];
+                $p= $fila['pre'];
+                $c= $fila['cantp'];
             }
-
-                $insertar = "INSERT INTO carrito  VALUES ('$usr', '$mail', '$id', '$no', '$im', '$pr', '$canCom')";
-		        $ejecutar = mysqli_query($con, $insertar);
-
-            $actua = $ex - $canCom;
-            echo $actua;
-
-            $ne = "UPDATE productos SET exi='$actua' WHERE idp='$id'";
-            $fin = $con -> query($ne);
+        
+            echo $u; 
+            echo $e;
+            echo $i;
+            echo $n;
+            echo $im;
+            echo $p;
+            echo $c; 
         ?>
+            <img style="width: 400px; height: 500px;" src=images/<?php echo $im; ?>> 
         
 
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
+<br><br><br>
  <br>
 <!-- partial -->
   <script  src="js/script2.js"></script>
