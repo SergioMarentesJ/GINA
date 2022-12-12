@@ -172,8 +172,10 @@
                 <h3 class="mb-1 mt-5 mt-lg-0">Nuestro principal objetivo es ofrecer productos de la mejor calidad, que cumpla con los criterios, necesidades y gustos  del los usuarios y clientes, tambien vender ropa y accesorios que cumplan con los mejores estandares del mercado.</h3>
             </div>
         </div>
-    </section>      
-           
+    </section>
+    <section class="container bg white mt-5 rounded text-center">
+    <a href="graficas/grafica.php" class="button">Ver gráficas</a>
+  </section>
       
  <fotter>
 <div class="footer">
