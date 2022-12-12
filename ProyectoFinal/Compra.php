@@ -84,7 +84,7 @@
         <section class="container text-light mt-5 rounded text-center">
     <div class="row justify-content-center">
       <div class="col-md-4 my-4">
-        <h1>Contáctanos</h1>
+        <h1>AGREGA LOS DATOS:</h1>
       </div>
     </div>
     <div class="row justify-content-center">
@@ -103,7 +103,7 @@
             <input type="text" class="form-control" name="Dirección" id="Dirección" required value="">
           </div>
           <div class="mb-3">
-            <label class="form-check-label" for="Email" style="color: black;">Email de facturación : </label>
+            <label class="form-check-label" for="Email" style="color: black;">Email : </label>
             <input type="email" class="form-control" name="Email" id="Email" required value="">
           </div>
           <div class="mb-3">
