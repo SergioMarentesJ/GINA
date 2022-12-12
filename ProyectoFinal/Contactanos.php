@@ -167,7 +167,7 @@ if (isset($_POST["submit"])) {
       <div class="col-md-4 my-4">
         <form class="bg-light rounded p-2 ml-lg-4 p-md-4" action="" method="post" autocomplete="off">
           <div class="mb-3">
-            <label class="form-check-label" for="usuario" style="color: black;">Usuario : </label>
+            <label class="form-check-label" for="usuario" style="color: black;">Nombre: </label>
             <input type="text" class="form-control" name="usuario" id="usuario" required value="">
           </div>
           <div class="mb-3">
