@@ -173,8 +173,14 @@
             </div>
         </div>
     </section>
-    <section class="container bg white mt-5 rounded text-center">
-    <a href="graficas/grafica.php" class="button">Ver gráficas</a>
+    <section class="text-center">
+    <?php
+      if ($t==1 && $row["usuario"] == 'admin'){
+    ?>
+      <a href="graficas/grafica.php"><button>VER GRAFICA</button></a>
+    <?php
+      }
+    ?>
   </section>
       
  <fotter>

@@ -77,8 +77,7 @@ $con = mysqli_connect("localhost", "root","","tienda") or die ("Error!");
       <br><br><br><br>
       <br><br><br><br>
     
-        <?php
-            $idcarrito =0;
+      <?php
             $band=0;
             $checa= $_GET['idM'];
             $canCom= $_GET['canProd'];
@@ -90,7 +89,7 @@ $con = mysqli_connect("localhost", "root","","tienda") or die ("Error!");
             $ejecutar = mysqli_query($con, $consulta);
 
             while ( $fila = mysqli_fetch_array($ejecutar)) {
-                $idprod = $fila['idp'];
+                $id = $fila['idp'];
 
                 $no = $fila['nom'];
                 $pr = $fila['pre'];
@@ -98,31 +97,13 @@ $con = mysqli_connect("localhost", "root","","tienda") or die ("Error!");
                 $im = $fila['image'];
             }
 
-            $consulta2 = "SELECT * FROM carrito where idp= $invert; ";
-            $ejecutar2 = mysqli_query($con, $consulta2);
-
-            while ( $fila2 = mysqli_fetch_array($ejecutar2)) {
-                $band=1;
-            }
-            if($band== 1){
-                while ( $fila2 = mysqli_fetch_array($ejecutar2)) {
-                    $idcarrito = $fila2['idp'];
-                    $canc = $fila2['cantp'];
-                }
-            }
-
-            if($idprod == $idcarrito){
-                $ne2 = "UPDATE carrito SET cantp='$canc + $canCom' WHERE idp='$idcarrito'";
-                $fin2 = $con -> query($ne2);
-            }else{
-                $insertar = "INSERT INTO carrito  VALUES ('$usr', '$mail', '$idprod', '$no', '$im', '$pr', '$canCom')";
+                $insertar = "INSERT INTO carrito  VALUES ('$usr', '$mail', '$id', '$no', '$im', '$pr', '$canCom')";
 		        $ejecutar = mysqli_query($con, $insertar);
-            }
 
             $actua = $ex - $canCom;
             echo $actua;
 
-            $ne = "UPDATE productos SET exi='$actua' WHERE idp='$idprod'";
+            $ne = "UPDATE productos SET exi='$actua' WHERE idp='$id'";
             $fin = $con -> query($ne);
         ?>
         
