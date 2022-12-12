@@ -93,7 +93,7 @@ $con = mysqli_connect("localhost", "root","","tienda") or die ("Error!");
       <section class="container text-light mt-5 rounded text-center">
         <div class="row justify-content-center">
             <div class="col-md-4 my-4">
-                <h1>CATEGORIAS</h1>
+                <h2>CATEGORIAS</h2>
             </div>
         </div>
         <div class="row pb-5">
