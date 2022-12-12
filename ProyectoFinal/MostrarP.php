@@ -13,9 +13,31 @@
 
 
     if (isset($_POST["submit"])) {
-        $iM = $_POST["idM"];
-        $cP = $_POST["cantProd"];
-        header('Location: Carrito.php?idM='.$iM.'&canProd='.$cP.'');
+            $checa= $_POST["idM"];
+            $canCom= $_POST["cantProd"];
+            $usr=$row["usuario"];
+            $mail=$row["email"];
+
+            $consulta = "SELECT * FROM productos where idp= $checa; ";
+            $ejecutar = mysqli_query($con, $consulta);
+
+            while ( $fila = mysqli_fetch_array($ejecutar)) {
+                $id = $fila['idp'];
+
+                $no = $fila['nom'];
+                $pr = $fila['pre'];
+                $ex = $fila['exi'];
+                $im = $fila['image'];
+            }
+
+                $insertar = "INSERT INTO carrito  VALUES ('$usr', '$mail', '$id', '$no', '$im', '$pr', '$canCom')";
+		        $ejecutar = mysqli_query($con, $insertar);
+
+            $actua = $ex - $canCom;
+
+            $ne = "UPDATE productos SET exi='$actua' WHERE idp='$id'";
+            $fin = $con -> query($ne);
+            echo "<script>alert('El elemento se ha añadido al carrito!')</script>";
     }
 ?>
 
