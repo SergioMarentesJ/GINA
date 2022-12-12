@@ -121,6 +121,9 @@ if (isset($_POST["submit"])) {
       ?>
         <li style="color:white;">Bienvenido <?php echo $row["usuario"]; ?>.</li>
         <li><a href="../ProyectoFinal/B V2/B V2/logout.php">Logout</a></li>
+        <a href="Carrito.php">Ver carrito
+          <img src="images/carrito.png" alt width="40px" height="40px">
+          </a>
       <?php
       } else {
       ?>
