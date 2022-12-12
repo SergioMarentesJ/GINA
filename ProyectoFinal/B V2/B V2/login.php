@@ -66,7 +66,8 @@ if (isset($_POST["submit"])) {
   </ul>
 
   <div class="main">
-    <a href="#" class="user"><i class="ri-user-fill"></i>Sign In</a>
+
+  <a href="#" class="user"><i class="ri-user-fill"></i>Sign In</a>
     <a href="../B V2/registration.php">Register</a>
     <div class="bx bx-menu" id="menu-icon"></div>
   </div>

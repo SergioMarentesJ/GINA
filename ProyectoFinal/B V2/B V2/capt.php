@@ -35,6 +35,7 @@
 			<li><a href="../../acerca_de.php">Acerca De</a></li>
 			<li><a href="../../Contactanos.php">Contactanos</a></li>
 			<li><a href="../../Ayuda.php">Ayuda</a></li>
+
 		</ul>
 	</header>
     <br><br><br><br>
