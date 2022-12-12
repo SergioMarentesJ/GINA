@@ -35,11 +35,7 @@
 			<li><a href="../../acerca_de.php">Acerca De</a></li>
 			<li><a href="../../Contactanos.php">Contactanos</a></li>
 			<li><a href="../../Ayuda.php">Ayuda</a></li>
-      <li> 
-          <a href="Carrito.php">Ver carrito
-          <img src="img/carrito.png" alt width="40px" height="40px">
-          </a>
-      </li>
+
 		</ul>
 	</header>
     <br><br><br><br>
