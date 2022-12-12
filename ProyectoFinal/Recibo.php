@@ -142,7 +142,10 @@
             <h6>A nombre de: <?php echo $nombre . " ". $apellidos ?></h6>
             <h6>Correo de facturacion: <?php echo $correo ?></h6>
             
-            
+            <?php
+                $borrar = "DELETE FROM carrito";
+                $B = mysqli_query($con, $borrar);
+            ?>
  <br>
 <!-- partial -->
   <script  src="js/script2.js"></script>

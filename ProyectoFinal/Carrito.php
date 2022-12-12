@@ -71,41 +71,67 @@ $con = mysqli_connect("localhost", "root","","tienda") or die ("Error!");
 	</header>
       <br><br><br><br>
       <br><br>
-      <center><table width="500" border="2" style="background-color: #F9F9F9; ">
-      <tr align="center">
-		<th>Nombre</th>
-		<th>Precio</th>
-		<th>Cantidad</th>
-		<th>Imagen</th>
-	</tr></center>
     
       <?php
             $consulta = "SELECT * FROM carrito";
             $ejecutar = mysqli_query($con, $consulta);
-            $i=0;
-            while ( $fila = mysqli_fetch_array($ejecutar)) {
-                $us = $fila['usuario'];
-                $em = $fila['email'];
-                $idpro = $fila['idp'];
-                $no = $fila['nomp'];
-                $ima = $fila['image'];
-                $prec = $fila['pre'];
-                $cantp = $fila['cantp'];
-                $i++;
-            ?>
-            <tr align="center">
-                <td><?php echo $no; ?></td>
-                <td><?php echo $prec; ?></td>
-                <td><?php echo $cantp; ?></td>
-                <td><img style="width: 260px; height: 350px;" src=images/<?php echo $ima; ?>></td>
-            </tr>
-            <?php } ?>
-            </table>
+            $totalFilas =    mysqli_num_rows($ejecutar); 
+            if($totalFilas == 0 ){
+                ?>
+                <br><br><br><br><br><br>
+                <div align="center">
+                    <h1> MALAS NOTICIAS: </h1>
+                    <h1> EL CARRITO ESTÁ VACIO!!! </h1>
+                    <h1> :( </h1>
+                </div>
+                <br><br><br><br><br><br>
+                <?php
+            }else{
+                ?>
+                <div align="center">
+                    <h1> PRODUCTOS EN EL CARRITO: </h1>
+                </div>
+                <center><table width="500" border="2" style="background-color: #F9F9F9; ">
+                    <tr align="center">
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th>Imagen</th>
+                    </tr></center>
+                <?php
+                    $i=0;
+                    while ( $fila = mysqli_fetch_array($ejecutar)) {
+                        $us = $fila['usuario'];
+                        $em = $fila['email'];
+                        $idpro = $fila['idp'];
+                        $no = $fila['nomp'];
+                        $ima = $fila['image'];
+                        $prec = $fila['pre'];
+                        $cantp = $fila['cantp'];
+                        $i++;
+                        
+                    ?>
+                    <tr align="center">
+                        <td><?php echo $no; ?></td>
+                        <td><?php echo $prec; ?></td>
+                        <td><?php echo $cantp; ?></td>
+                        <td><img style="width: 260px; height: 350px;" src=images/<?php echo $ima; ?>></td>
+                    </tr>
+                    <?php } 
+            }?>
+                </table>
+                <?php
+            if($totalFilas == 0 ){
+            }else{
+                ?>
+                <br>
             <button type="submit" class="btn btn-primary btn-lg btn-block" onclick="window.location.href='http://localhost/cursophp/PROYECTO/GINA/ProyectoFinal/Compra.php'">Proceder al pago</button>
-        
+            <?php
+            }
+                ?>
 
 
-<br><br><br>
+<br>
  <br>
 <!-- partial -->
   <script  src="js/script2.js"></script>
