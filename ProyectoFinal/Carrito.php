@@ -8,9 +8,6 @@
   }else{
     $t=0;
   }
-?>
-
-<?php 
 
 $con = mysqli_connect("localhost", "root","","tienda") or die ("Error!"); 
 
@@ -45,8 +42,8 @@ $con = mysqli_connect("localhost", "root","","tienda") or die ("Error!");
 <body>
     
     <header>
-		<a href="index.php" class="logo"><i class="ri-home-heart-fill"></i><span>Silky</span></a>
-
+		<a href="index.php" class="logo"><img src="images/LOGO1.png" alt="" width="60px" height="80px"><span>Silky</span></a>
+		
 		<ul class="navbar">
 			<li><a href="index.php" class="active">Home</a></li>
 			<li><a href="Tienda.php">Tienda</a></li>
@@ -73,64 +70,37 @@ $con = mysqli_connect("localhost", "root","","tienda") or die ("Error!");
 		</div>
 	</header>
       <br><br><br><br>
-      <br><br><br><br>
-      <br><br><br><br>
-      <br><br><br><br>
+      <br><br>
     
-        <?php
-            $band=0;
-            $checa= $_GET['idM'];
-            $canCom= $_GET['canProd'];
-            $invert= intval($checa);
+      <?php
             $usr=$row["usuario"];
-            $mail=$row["email"];
 
-            $consulta = "SELECT * FROM productos where idp= $invert; ";
+            $consulta = "SELECT * FROM carrito where usuario= '$usr' ";
             $ejecutar = mysqli_query($con, $consulta);
 
             while ( $fila = mysqli_fetch_array($ejecutar)) {
-                $id = $fila['idp'];
-
-                $no = $fila['nom'];
-                $pr = $fila['pre'];
-                $ex = $fila['exi'];
-                $im = $fila['image'];
+                $u= $fila['usuario'];
+                $e= $fila['email'];
+                $i= $fila['idp'];
+                $n= $fila['nomp'];
+                $im= $fila['image'];
+                $p= $fila['pre'];
+                $c= $fila['cantp'];
             }
-
-            $consulta2 = "SELECT * FROM carrito where idp= $id; ";
-            $ejecutar2 = mysqli_query($con, $consulta2);
-
-            while ( $fila2 = mysqli_fetch_array($ejecutar2)) {
-                $band=1;
-            }
-            if($band== 1){
-                while ( $fila2 = mysqli_fetch_array($ejecutar2)) {
-                    $idcarrito = $fila2['idp'];
-                    $canc = $fila2['cantp'];
-                }
-            }else{
-                $idcarrito=0;
-            }
-
-            if($band== 1 && $id == $idcarrito){
-                $ne2 = "UPDATE carrito SET cantp='$canc + $canCom' WHERE idp='$idc'";
-                $fin2 = $con -> query($ne2);
-            }else{
-                $insertar = "INSERT INTO carrito  VALUES ('$usr', '$mail', '$id', '$no', '$im', '$pr', '$canCom')";
-		        $ejecutar = mysqli_query($con, $insertar);
-            }
-
-            $actua = $ex - $canCom;
-            echo $actua;
-
-            $ne = "UPDATE productos SET exi='$actua' WHERE idp='$id'";
-            $fin = $con -> query($ne);
+        
+            echo $u; 
+            echo $e;
+            echo $i;
+            echo $n;
+            echo $im;
+            echo $p;
+            echo $c; 
         ?>
+            <img style="width: 400px; height: 500px;" src=images/<?php echo $im; ?>> 
         
 
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
+<br><br><br>
  <br>
 <!-- partial -->
   <script  src="js/script2.js"></script>
@@ -179,7 +149,7 @@ $con = mysqli_connect("localhost", "root","","tienda") or die ("Error!");
       </ul>
         </div>
       </div>
-    <div class="clearfix"></div>
+    <div class="clearfix"><a class="bottom_btn" href="#">&copy; SILKY</a></div><br>
   </div>
 </div>
          </fotter>

@@ -44,6 +44,9 @@ $con = mysqli_connect("localhost", "root","","tienda") or die ("Error!");
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous"> 
+    <link rel="stylesheet" href="css/productos.css">
+    
+  
   
   <style>
     .container{
@@ -57,7 +60,7 @@ $con = mysqli_connect("localhost", "root","","tienda") or die ("Error!");
 <body>
     
     <header>
-		<a href="index.php" class="logo"><i class="ri-home-heart-fill"></i><span>Silky</span></a>
+		<a href="index.php" class="logo"><img src="images/LOGO1.png" alt="" width="60px" height="80px"><span>Silky</span></a>
 
 		<ul class="navbar">
 			<li><a href="index.php" class="active">Home</a></li>
@@ -86,10 +89,11 @@ $con = mysqli_connect("localhost", "root","","tienda") or die ("Error!");
 	</header>
       <br><br><br><br>
     
+    <div id="productos_tabla">
       <section class="container text-light mt-5 rounded text-center">
         <div class="row justify-content-center">
             <div class="col-md-4 my-4">
-                <h1>CATEGORIAS</h1>
+                <h2>CATEGORIAS</h2>
             </div>
         </div>
         <div class="row pb-5">
@@ -106,19 +110,51 @@ $con = mysqli_connect("localhost", "root","","tienda") or die ("Error!");
         </div>
     </section>
 
-    <section class="container mt-5 rounded text-center">
-        <div class="row justify-content-center">
-            <div class="col-md-4 my-4">
-                <h1 style="color:white;">TODOS LOS PRODUCTOS</h1>
+   
+ <br>
+ <section>
+        
+        <div class="container">
+              <br><br><br>
+            <!--BLOCK ROW START-->
+            <div heigth="100%">
+                <div>
+                
+                	<!--PRICE CONTENT START-->
+                    <div class="contenido clearfix">
+                        
+                        <!--HEAD PRICE DETAIL START-->
+                        <div class="generic_head_price clearfix">
+                        
+                            <!--HEAD CONTENT START-->
+                            <div class="generic_head_content clearfix">
+                            
+                                <div class="head_bg"></div>
+                                <div class="head">
+                                 <span>
+                                    
+                                    <div class="row justify-content-center">
+            <div>
+                <h3>TODOS LOS PRODUCTOS</h3>
             </div>
         </div>
-        <div class="row justify-content-center">
+       
+                                    
+                                    </span>
+                                </div>
+                                <!--//HEAD END-->  
+                            </div>
+                            <!--//HEAD CONTENT END-->
+                        </div>                       
+                        <div class="generic_feature_list">
+                        	<ul>
+                            	<li> <div>
            <div class="col-md-4 my-4">
-            <table width="500" style="background-color: #F9F9F9;" style="color:black;">
+            <table id="productos_tabla" width="1000" style="background-color: rgba(0, 0, 0, 0);" style="color:black;">
               <tr>
                 <th>Nombre</th>
                 <th>Precio</th>
-                <th>Imagen</th>
+                <th width="100%"  height="100%">Imagen</th>
               </tr>
             <?php
             $consulta = "SELECT * FROM productos";
@@ -142,7 +178,7 @@ $con = mysqli_connect("localhost", "root","","tienda") or die ("Error!");
               <a href="MostrarP.php?idM=<?php echo $id; ?>" class="text-dark"><?php echo $no; ?></a>
             </td>
             <td><?php echo '$'. $pr; ?></td>
-            <td><img style="width: 50px; height: 50px;" src=images/<?php echo $fila['image']; ?>></td>
+            <td><img style="width: 400px; height: 500px;" src=images/<?php echo $fila['image']; ?>></td>
 
             <?php
               if ($t==1 && $row["usuario"] == 'admin'){
@@ -168,9 +204,20 @@ $con = mysqli_connect("localhost", "root","","tienda") or die ("Error!");
             <?php
               }
             ?>
+            <br>
+        </div></li>
+                            </ul>
+                        </div>
+                        <!--//FEATURE LIST END-->
+                    </div>
+                    <!--//PRICE CONTENT END-->   
+                </div>
+            </div>	  <br><br><br>
+            <!--//BLOCK ROW END-->
         </div>
     </section>
- <br>
+  
+    </div>   
 <!-- partial -->
   <script  src="js/script2.js"></script>
       
@@ -218,7 +265,7 @@ $con = mysqli_connect("localhost", "root","","tienda") or die ("Error!");
       </ul>
         </div>
       </div>
-    <div class="clearfix"></div>
+    <div class="clearfix"><a class="bottom_btn" href="#">&copy; SILKY</a></div><br>
   </div>
 </div>
          </fotter>

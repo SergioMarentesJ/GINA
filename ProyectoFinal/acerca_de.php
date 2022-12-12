@@ -93,7 +93,7 @@
 <body>
     
     <header>
-		<a href="index.php" class="logo"><i class="ri-home-heart-fill"></i><span>Silky</span></a>
+		<a href="index.php" class="logo"><img src="images/LOGO1.png" alt="" width="60px" height="80px"><span>Silky</span></a>
 
 		<ul class="navbar">
 			<li><a href="index.php" class="active">Home</a></li>
@@ -172,8 +172,16 @@
                 <h3 class="mb-1 mt-5 mt-lg-0">Nuestro principal objetivo es ofrecer productos de la mejor calidad, que cumpla con los criterios, necesidades y gustos  del los usuarios y clientes, tambien vender ropa y accesorios que cumplan con los mejores estandares del mercado.</h3>
             </div>
         </div>
-    </section>      
-           
+    </section>
+    <section class="text-center">
+    <?php
+      if ($t==1 && $row["usuario"] == 'admin'){
+    ?>
+      <a href="graficas/grafica.php"><button>VER GRAFICA</button></a>
+    <?php
+      }
+    ?>
+  </section>
       
  <fotter>
 <div class="footer">
@@ -216,7 +224,7 @@
       </ul>
         </div>
       </div>
-    <div class="clearfix"></div>
+    <div class="clearfix"><a class="bottom_btn" href="#">&copy; SILKY</a></div><br>
   </div>
 </div>
          </fotter>
