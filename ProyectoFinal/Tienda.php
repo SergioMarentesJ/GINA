@@ -110,70 +110,7 @@ $con = mysqli_connect("localhost", "root","","tienda") or die ("Error!");
         </div>
     </section>
 
-    <section class="container mt-5 rounded text-center">
-        <div class="row justify-content-center">
-            <div class="col-md-4 my-4">
-                <h1 style="color:white;">TODOS LOS PRODUCTOS</h1>
-            </div>
-        </div>
-        <div>
-           <div class="col-md-4 my-4">
-            <table id="productos_tabla" width="800" style="background-color: #F9F9F9;" style="color:black;">
-              <tr>
-                <th>Nombre</th>
-                <th>Precio</th>
-                <th width="80%"  height="80%">Imagen</th>
-              </tr>
-            <?php
-            $consulta = "SELECT * FROM productos";
-            $ejecutar = mysqli_query($con, $consulta);
-            $i = 0;
-            while ( $fila = mysqli_fetch_array($ejecutar)) {
-              $id = $fila['idp'];
-              $no = $fila['nom'];
-              $ca = $fila['cat'];
-              $de = $fila['des'];
-              $ex = $fila['exi'];
-              $pr = $fila['pre'];
-              $im = $fila['image'];
-
-              $i++;
-
-            ?>
-            <tr style="text-align:center;">
-            
-            <td>
-              <a href="MostrarP.php?idM=<?php echo $id; ?>" class="text-dark"><?php echo $no; ?></a>
-            </td>
-            <td><?php echo '$'. $pr; ?></td>
-            <td><img style="width: 300px; height: 300px;" src=images/<?php echo $fila['image']; ?>></td>
-
-            <?php
-              if ($t==1 && $row["usuario"] == 'admin'){
-            ?>
-                <div>
-                  <td><a href="editar.php?idmodifi=<?php echo $id; ?>">Editar</a></td>
-                  <td><a href="Tienda.php?borrar=<?php echo $id; ?>">Borrar</a></td>
-                </div>
-            <?php
-              }
-            ?>
-            </tr>
-            <?php } ?>
-            </table>
-           </div>
-            
-            <?php
-              if ($t==1 && $row["usuario"] == 'admin'){
-            ?>
-                <div>
-                  <a href="../ProyectoFinal/ABC.php">Añadir productos</a>
-                </div>
-            <?php
-              }
-            ?>
-        </div>
-    </section>
+   
  <br>
  <section>
         
@@ -267,6 +204,7 @@ $con = mysqli_connect("localhost", "root","","tienda") or die ("Error!");
             <?php
               }
             ?>
+            <br>
         </div></li>
                             </ul>
                         </div>
