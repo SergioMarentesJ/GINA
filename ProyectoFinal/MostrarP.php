@@ -133,6 +133,10 @@
                     
                     <button type="submit" class="btn btn-primary btn-lg btn-block" name="submit">Agregar al carrito</button>
                 <?php
+                    }else{
+                ?>
+                <h1 align="center" style="color: red;">Para agregar al carrito debes iniciar sesión</h1>
+                <?php
                     }
                 ?>
             </form>

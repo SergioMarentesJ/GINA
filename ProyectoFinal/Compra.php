@@ -9,10 +9,20 @@
     $t=0;
   }
 
-$con = mysqli_connect("localhost", "root","","tienda") or die ("Error!"); 
+    if (isset($_POST["submit"])) {
+        $no= $_POST['Nombre'];
+        $ap= $_POST['Apellidos'];
+        $dir= $_POST['Dirección'];
+        $em= $_POST['Email'];
+        $pa= $_POST['Pago'];
+        if($pa='Oxxo'){
+            header('Location: Recibo.php?no='.$no.'&ap='.$ap.'&dir='.$dir.'&em='.$em.'');
+        }else{
 
+        }
+        
+    }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +30,7 @@ $con = mysqli_connect("localhost", "root","","tienda") or die ("Error!");
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Silky</title>
-  <link rel="icon" type="image/jpg" href="./images/Silky.jpeg">
+    <link rel="icon" type="image/jpg" href="./images/Silky.jpeg">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
 	<link rel="stylesheet"
@@ -40,10 +50,9 @@ $con = mysqli_connect("localhost", "root","","tienda") or die ("Error!");
     </style>
 </head>
 <body>
-    
-    <header>
+<header>
 		<a href="index.php" class="logo"><img src="images/LOGO1.png" alt="" width="60px" height="80px"><span>Silky</span></a>
-		
+
 		<ul class="navbar">
 			<li><a href="index.php" class="active">Home</a></li>
 			<li><a href="Tienda.php">Tienda</a></li>
@@ -69,43 +78,56 @@ $con = mysqli_connect("localhost", "root","","tienda") or die ("Error!");
 			<div class="bx bx-menu" id="menu-icon"></div>
 		</div>
 	</header>
-      <br><br><br><br>
-      <br><br>
-      <center><table width="500" border="2" style="background-color: #F9F9F9; ">
-      <tr align="center">
-		<th>Nombre</th>
-		<th>Precio</th>
-		<th>Cantidad</th>
-		<th>Imagen</th>
-	</tr></center>
     
-      <?php
-            $consulta = "SELECT * FROM carrito";
-            $ejecutar = mysqli_query($con, $consulta);
-            $i=0;
-            while ( $fila = mysqli_fetch_array($ejecutar)) {
-                $us = $fila['usuario'];
-                $em = $fila['email'];
-                $idpro = $fila['idp'];
-                $no = $fila['nomp'];
-                $ima = $fila['image'];
-                $prec = $fila['pre'];
-                $cantp = $fila['cantp'];
-                $i++;
-            ?>
-            <tr align="center">
-                <td><?php echo $no; ?></td>
-                <td><?php echo $prec; ?></td>
-                <td><?php echo $cantp; ?></td>
-                <td><img style="width: 260px; height: 350px;" src=images/<?php echo $ima; ?>></td>
-            </tr>
-            <?php } ?>
-            </table>
-            <button type="submit" class="btn btn-primary btn-lg btn-block" onclick="window.location.href='http://localhost/cursophp/PROYECTO/GINA/ProyectoFinal/Compra.php'">Proceder al pago</button>
-        
+      <br><br><br><br><br><br>
 
+        <section class="container text-light mt-5 rounded text-center">
+    <div class="row justify-content-center">
+      <div class="col-md-4 my-4">
+        <h1>Contáctanos</h1>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-md-4 my-4">
+        <form class="bg-light rounded p-2 ml-lg-4 p-md-4" action="" method="post" autocomplete="off">
+          <div class="mb-3">
+            <label class="form-check-label" for="Nombre" style="color: black;">Nombre : </label>
+            <input type="text" class="form-control" name="Nombre" id="Nombre" required value="">
+          </div>
+          <div class="mb-3">
+            <label class="form-check-label" for="Apellidos" style="color: black;">Apellidos : </label>
+            <input type="text" class="form-control" name="Apellidos" id="Apellidos" required value="">
+          </div>
+          <div class="mb-3">
+            <label class="form-check-label" for="Dirección" style="color: black;">Dirección : </label>
+            <input type="text" class="form-control" name="Dirección" id="Dirección" required value="">
+          </div>
+          <div class="mb-3">
+            <label class="form-check-label" for="Email" style="color: black;">Email de facturación : </label>
+            <input type="email" class="form-control" name="Email" id="Email" required value="">
+          </div>
+          <div class="mb-3">
+            <label class="form-check-label" for="Pago" style="color: black;">Método de Pago : </label>
 
-<br><br><br>
+            <div>
+                <input type="radio" id="Credito" name="Pago" value="Credito">
+                <label for="Credito" style="color: black;">Tarjeta de Credito</label>
+            </div>
+
+            <div>
+                <input type="radio" id="Oxxo" name="Pago" value="Oxxo">
+                <label for="Oxxo" style="color: black;"> Pago en efectivo</label>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-check-label" for="Envio" style="color: black;">Costo de envio : </label>
+            <input type="text" readonly onmousedown="return false;" class="form-control" name="Envio" id="Envio" value="Envio sin Costo">
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg btn-block" name="submit">Finalizar compra</button>
+        </form>
+      </div>
+    </div>
+  </section>
  <br>
 <!-- partial -->
   <script  src="js/script2.js"></script>
@@ -166,10 +188,3 @@ $con = mysqli_connect("localhost", "root","","tienda") or die ("Error!");
     <script src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js'></script><script  src="./script.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
