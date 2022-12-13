@@ -1,3 +1,18 @@
+
+<?php 
+
+session_start();
+
+if ( isset($_POST['token']) ) {
+  $token = strtolower($_POST['token']);
+  if (isset($_SESSION['captcha_token']) && $_SESSION['captcha_token'] == $token) {
+    header("Location: login.php");
+  } else {
+    echo "<script> alert('CAPTCHA INCORRECTO'); </script>";
+  }
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,7 +61,7 @@
 			<div class="card-header">VERIFICA QUE ERES HUMANO</div>
 			<div class="card-body">
 
-				<form id="contact-form" method="post" action="../../contact.php">
+				<form id="contact-form" method="post" action="">
 
 					<div class="form-group row">
                     <label class="col-sm-2 col-form-label">Escribe el siguiente código:</label>
