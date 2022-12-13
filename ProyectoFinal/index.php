@@ -26,6 +26,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/estilos2.css">
+    
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>  
   <style>
     .container{
@@ -110,11 +112,71 @@
               </div>
             </div>
     </section>
+    
+    
+          <section class="container text-light mt-5 rounded text-center">
+        <div class="row justify-content-center">
+            <div class="col-md-4 my-4">
+                <h1></h1>
+            </div>
+        </div>
+        <div class="row pb-5">
+           <div id="hero-slides">
+              <div id="slides-cont">
+                <div id="slides">
+                  <div class="slide" style="background-image: url(images/cNegra.jpeg)">
+                    <div class="number">Silky</div>
+                    <div class="body">
+                      <div class="location">$900</div>
+                      <div class="headline">Chamarra de cuero negra	</div><a href="Tienda.php" target="_blank">
+                        <div class="link">Ver mas...</div></a>
+                    </div>
+                  </div>
+                  <div class="slide" style="background-image: url(images/cVerde.jpeg)">
+                    <div class="number">Silky</div>
+                    <div class="body">
+                      <div class="location">$1200</div>
+                      <div class="headline">Chamarra verde</div><a href="Tienda.php" target="_blank">
+                        <div class="link">Ver mas...</div></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+</div>
+           
+            </div>
+            
+            
+                    <div class="row pb-5">
+           <div id="hero-slides">
+              <div id="slides-cont">
+                <div id="slides">
+                  <div class="slide" style="background-image: url(images/pNegro.jpeg)">
+                    <div class="number">Silky</div>
+                    <div class="body">
+                      <div class="location">$350</div>
+                      <div class="headline">Pantalon Negro	</div><a href="Tienda.php" target="_blank">
+                        <div class="link">Ver mas...</div></a>
+                    </div>
+                  </div>
+                  <div class="slide" style="background-image: url(images/sVerde.jpeg)">
+                    <div class="number">Silky</div>
+                    <div class="body">
+                      <div class="location">$200</div>
+                      <div class="headline">Short Verde</div><a href="Tienda.php" target="_blank">
+                        <div class="link">Ver mas...</div></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+</div>
+           
+            </div>
+    </section>
+   
  <br>
 <!-- partial -->
-  <script  src="js/script2.js"></script>
-  
-      	<!--js link--->
+  <script  src="js/script2.js"></script>      	
 	<script type="text/javascript" src="js/script.js"></script>
   
   <fotter style=text-align:center>
