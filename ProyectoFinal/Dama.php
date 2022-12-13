@@ -32,7 +32,7 @@ $con = mysqli_connect("localhost", "root","","tienda") or die ("Error!");
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous"> 
-    <link rel="stylesheet" href="css/productos.css">
+    <link rel="stylesheet" href="./css/productos.css">
   
   <style>
     .container{

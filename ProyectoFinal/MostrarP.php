@@ -56,6 +56,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous"> 
+    <link rel="stylesheet" href="./css/mostrarP.css">
   
   <style>
     .container{
@@ -98,49 +99,69 @@
 	</header>
     
       <br><br><br><br><br><br>
-    
-      <?php
-            $checa= $_GET['idM']; 
-            $consulta = "SELECT * FROM productos where idp= $checa; ";
-            $ejecutar = mysqli_query($con, $consulta);
+                  
+      <section class="container text-light mt-5 rounded text-center">
+        <div class="row justify-content-center">
+            <div class="col-md-4 my-4">
+                <h1>SILKY</h1>
+            </div>
+        </div>
+        <div class="row pb-5">
+<br><br>
+        <section class="cards">
+            <article class="card card--1">
+              <div class="card__img"></div>
+              <a href="#" class="card_link">
+                <div class="card__img--hover"></div>
+              </a>
+              <div class="card__info">
+              <?php
+                    $checa= $_GET['idM']; 
+                    $consulta = "SELECT * FROM productos where idp= $checa; ";
+                    $ejecutar = mysqli_query($con, $consulta);
 
-            while ( $fila = mysqli_fetch_array($ejecutar)) {
-                $id = $fila['idp'];
-                $no = $fila['nom'];
-                $ca = $fila['cat'];
-                $de = $fila['des'];
-                $ex = $fila['exi'];
-                $pr = $fila['pre'];
-                $im = $fila['image'];
-            }
-            ?>
-            <tr>
-                <img style="width: 260px; height: 350px;" src=images/<?php echo $im; ?>>
-                <h1><?php echo $no; ?></h1>
-                <h2>$<?php echo $pr; ?> mxm</h2>
-                <h4>Categoria: <?php echo $ca; ?></h4>
-                <h5>Descripcion: </h5>
-                <?php echo $de; ?>
-                Numero de articulos:<?php echo $ex; ?>
-            </tr>
-            <form action="" method="POST">
-                <input type="hidden" name="idM" id="idM" value="<?php echo $id; ?>">
-                Cantidad a comprar:
-                <input type="number" name="cantProd" id="cantProd">
-                <br> <br>
-                <?php
-                    if ($t==1){
-                ?>
-                    
-                    <button type="submit" class="btn btn-primary btn-lg btn-block" name="submit">Agregar al carrito</button>
-                <?php
-                    }else{
-                ?>
-                <h1 align="center" style="color: red;">Para agregar al carrito debes iniciar sesión</h1>
-                <?php
+                    while ( $fila = mysqli_fetch_array($ejecutar)) {
+                        $id = $fila['idp'];
+                        $no = $fila['nom'];
+                        $ca = $fila['cat'];
+                        $de = $fila['des'];
+                        $ex = $fila['exi'];
+                        $pr = $fila['pre'];
+                        $im = $fila['image'];
                     }
-                ?>
-            </form>
+                    ?>
+                    <tr>
+                        <img style="width: 260px; height: 350px;" src=images/<?php echo $im; ?>>
+                        <h1><?php echo $no; ?></h1>
+                        <h2>$<?php echo $pr; ?> mxm</h2>
+                        <h4>Categoria: <?php echo $ca; ?></h4>
+                        <h5>Descripcion: </h5>
+                        <?php echo $de; ?>
+                        Numero de articulos:<?php echo $ex; ?>
+                    </tr>
+                    <form action="" method="POST">
+                        <input type="hidden" name="idM" id="idM" value="<?php echo $id; ?>">
+                        Cantidad a comprar:
+                        <input type="number" name="cantProd" id="cantProd">
+                        <br> <br>
+                        <?php
+                            if ($t==1){
+                        ?>
+
+                            <button type="submit" class="btn btn-primary btn-lg btn-block" name="submit">Agregar al carrito</button>
+                        <?php
+                            }else{
+                        ?>
+                        <h1 align="center" style="color: red;">Para agregar al carrito debes iniciar sesión</h1>
+                        <?php
+                            }
+                        ?>
+              </div>
+            </article><br>
+        </section><br>
+           
+           
+            </section>
  <br>
 <!-- partial -->
   <script  src="js/script2.js"></script>
