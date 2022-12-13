@@ -32,7 +32,7 @@ $con = mysqli_connect("localhost", "root","","tienda") or die ("Error!");
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous"> 
-    <link rel="stylesheet" href="./css/productos.css">
+    
   
   <style>
     .container{
@@ -41,9 +41,21 @@ $con = mysqli_connect("localhost", "root","","tienda") or die ("Error!");
             background-size: cover;
             background-position: center center;
         }
+      
+      h2{
+          color: aliceblue;
+      }
+      
+      table, th, td, tr{
+          color: aliceblue;
+      }
+      
+      
     </style>
+
 </head>
-<body>
+<link rel="stylesheet" href="./css/productos.css">
+   <body>
     
     <header>
 		<a href="index.php" class="logo"><img src="images/LOGO1.png" alt="" width="60px" height="80px"><span>Silky</span></a>
@@ -120,7 +132,7 @@ $con = mysqli_connect("localhost", "root","","tienda") or die ("Error!");
                                     
                                     <div class="row justify-content-center">
             <div>
-                <h3>PRODUCTOS DAMA</h3>
+                <h2>PRODUCTOS DAMA</h2>
             </div>
         </div>
        
@@ -137,7 +149,7 @@ $con = mysqli_connect("localhost", "root","","tienda") or die ("Error!");
            <div class="col-md-4 my-4">
             <table id="productos_tabla" width="1000" style="background-color: rgba(0, 0, 0, 0);" style="color:black;">
               <tr>
-                <th>Nombre</th>
+                <th style="">Nombre</th>
                 <th>Precio</th>
                 <th width="100%"  height="100%">Imagen</th>
               </tr>
