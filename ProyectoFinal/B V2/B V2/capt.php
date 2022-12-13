@@ -6,7 +6,7 @@ session_start();
 if ( isset($_POST['token']) ) {
   $token = strtolower($_POST['token']);
   if (isset($_SESSION['captcha_token']) && $_SESSION['captcha_token'] == $token) {
-    header("Location: ../../index.php");
+    header("Location: login.php");
   } else {
     echo "<script> alert('CAPTCHA INCORRECTO'); </script>";
   }
